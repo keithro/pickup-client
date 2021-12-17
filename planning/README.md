@@ -9,7 +9,7 @@
 ## Project Description
 
 MVP
-Pickup is an application to bring people together for pick-up games, workouts, sporting events or other group activities. Users will be able to create games or "events", invite friends, see other user's games, filter by location, activity and skill level.
+Pickup is an application to bring people together for pick-up games, workouts, sporting events or other group activities. Users will be able to create games or "events", invite friends, see other user's games, filter by location, activity and skill level. The frontend will be built with React and Mongo, Express and Node will be used for the backend
 
 Post MVP
 Users can upload photos to profile, chat with other users and invite friends to games.

@@ -1,7 +1,19 @@
 .App {
-  text-align: center;
+  width: 100vw;
+  min-height: 100vh;
 }
 
+@media screen and (min-width: 768px) {
+  .App {
+    height: 100vh;
+  }
+}
+
+@media screen and (min-width: 1028px) {
+  
+}
+
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +48,4 @@
     transform: rotate(360deg);
   }
 }
+ */

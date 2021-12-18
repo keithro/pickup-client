@@ -1,0 +1,43 @@
+.welcome {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* 
+TODO: 
+.welcome-pane {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .welcome-pane { */
+.pane1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-logo {
+  font-size: 8rem;
+}
+
+.welcome-tag-line {
+  font-size: 2.2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .welcome {
+    flex-direction: row;
+  }
+
+  .welcome-pane {
+    flex: 1 1 50%;
+  }
+}
+
+@media screen and (min-width: 1028px) {
+  
+}

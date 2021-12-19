@@ -4,16 +4,9 @@
   display: flex;
   flex-direction: column;
 }
-/* 
-TODO: 
-.welcome-pane {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
 
-/* .welcome-pane { */
-.pane1 {
+.welcome-panel1,
+.welcome-panel2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,7 +26,8 @@ TODO:
     flex-direction: row;
   }
 
-  .welcome-pane {
+  .welcome-panel1,
+  .welcome-panel2 {
     flex: 1 1 50%;
   }
 }

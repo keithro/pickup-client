@@ -1,16 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router } from 'react-router-dom'
-import './index.css';
+import { HashRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import './index.css';
 
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    {/* <Router> */}
+    <BrowserRouter>
       <App />
-    </Router>
+    </BrowserRouter>
+    {/* </Router> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

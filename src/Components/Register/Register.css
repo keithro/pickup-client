@@ -1,5 +1,6 @@
 .register {
   width: 70%;
+  max-width: 45rem;
   padding: 3.6rem;
   box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.3);
 
@@ -7,10 +8,35 @@
   flex-direction: column;
 }
 
+.register-heading {
+  font-size: 2.8rem;
+  margin-top: .8rem 0;
+}
+
 .register form {
   display: flex;
   flex-direction: column;
+}
 
+.register label {
+  margin-top: .6rem;
+
+  transition: all .3s;
+}
+
+.register label.placeholder-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(3rem);
+}
+
+.register input {
+  height: 2.8rem;
+}
+
+.register button {
+  height: 2.8rem;
+  margin-top: 1.2rem;
 }
 
 @media screen and (min-width: 768px) {

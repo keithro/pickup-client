@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' exact element={<Welcome user={user} setUser={setUser} />} />
+        <Route path='/' element={<Welcome user={user} setUser={setUser} />} />
         <Route path='/home' element={<Home user={user} />} />
         {/* <Route path='/register' element={<Register />} /> */}
       </Routes>

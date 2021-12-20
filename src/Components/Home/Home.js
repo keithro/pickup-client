@@ -1,11 +1,12 @@
+import React, { useEffect, useState } from 'react';
+import './Home.css';
 
-// import './Home.css';
+const Home = (props) => {
+  
 
-// const Home = (props) => {
+  return (
+    <h1>Welcome to the Home page</h1>
+  )
+}
 
-//   return (
-
-//   )
-// }
-
-// export default Home;
+export default Home;

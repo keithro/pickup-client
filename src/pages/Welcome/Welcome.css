@@ -35,3 +35,91 @@
 @media screen and (min-width: 1028px) {
   
 }
+
+/* .welcome-panel2 {
+  position: relative;
+} */
+
+.access-form {
+  width: 70%;
+  max-width: 45rem;
+  padding: 3.6rem;
+  box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.3);
+  position: relative;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.access-form-heading {
+  font-size: 2.8rem;
+  margin-top: .8rem 0;
+}
+
+.access-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.access-form label {
+  margin-top: .6rem;
+
+  transition: all .3s;
+}
+
+.access-form label.placeholder-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(3rem);
+}
+
+.access-form input {
+  height: 2.8rem;
+}
+
+/* TODO: Reconsider this */
+.access-form input.invalid {
+  background: rgb(243, 170, 170);
+}
+
+.access-form button {
+  height: 2.8rem;
+  margin-top: 1.2rem;
+}
+
+.access-form button:disabled {
+  background: rgb(136, 136, 136);
+  color: rgb(61, 61, 61);
+  cursor: not-allowed;
+}
+
+/* Make separate component? */
+.error-message {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  top: -10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid rgb(245, 105, 105);
+  border-radius: .5rem;
+  background-color: rgb(243, 170, 170);
+  color: rgb(230, 67, 67);
+}
+
+@media screen and (min-width: 768px) {
+  .access-form {
+    /* width: 70%; */
+    padding: 4.8rem;
+    box-shadow: 2px 2px 1.6rem rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media screen and (min-width: 1028px) {
+  .access-form {
+    /* width: 70%; */
+    /* padding: 4.8rem; */
+    box-shadow: 2px 2px 1.8rem rgba(0, 0, 0, 0.3);
+  }
+}

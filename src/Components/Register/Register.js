@@ -20,10 +20,6 @@ const Register = (props) => {
 
   const handleRegister = async (event) => {
     event.preventDefault();
-
-    // console.log('Event: ', event.type);
-    // console.log('Input: ', input);
-
     const res = await fetch('http://localhost:4000/auth/register', {
       method: 'POST',
       headers: {
@@ -35,7 +31,7 @@ const Register = (props) => {
 
     if(data.errors) {
       console.log('DATA.ERRORS: ', data.errors)
-      const errors = data.errors.msg || data.errors[0].msg;
+      const errors = data.errors[0] || data.errors;
       // TODO: DELETE
       console.log('Your errors variable = ', errors)
       setIsErrors(errors);

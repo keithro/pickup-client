@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, Routes, Route, Navigate } from 'react-router-dom';
 
-import Welcome from './Components/Welcome/Welcome';
-import Home from './Components/Home/Home';
+import Welcome from './pages/Welcome/Welcome';
+import Home from './pages/Home/Home';
 
 // import logo from './logo.svg';
 import './App.css';

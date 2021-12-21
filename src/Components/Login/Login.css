@@ -34,9 +34,21 @@
   height: 2.8rem;
 }
 
+/* TODO: Reconsider this */
+.login input.invalid {
+  background: red;
+}
+
 .login button {
   height: 2.8rem;
   margin-top: 1.2rem;
+}
+
+.login button:disabled {
+  background: red;
+  /* background: rgb(136, 136, 136); */
+  color: rgb(61, 61, 61);
+  cursor: not-allowed;
 }
 
 @media screen and (min-width: 768px) {

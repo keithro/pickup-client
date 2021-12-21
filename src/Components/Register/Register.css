@@ -39,6 +39,14 @@
   margin-top: 1.2rem;
 }
 
+.register button:disabled {
+  background: red;
+  /* background: rgb(136, 136, 136); */
+  color: rgb(61, 61, 61);
+  cursor: not-allowed;
+}
+
+
 @media screen and (min-width: 768px) {
   .register {
     /* width: 70%; */

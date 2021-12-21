@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Register from '../Register/Register';
-import Login from '../Login/Login';
+import Register from '../../components/Register/Register';
+import Login from '../../components/Login/Login';
 import './Welcome.css';
 
 const Welcome = (props) => {

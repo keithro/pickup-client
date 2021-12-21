@@ -74,8 +74,8 @@ const Welcome = (props) => {
           <h2 className='access-form-heading'>{isMember ? 'Login' : 'Register'}</h2>
           <form onSubmit={handleSubmit}>
             {!isMember && <>
-              <label for='username' className={input.username || 'placeholder-hidden'}>username</label>
-              <input type='text' name='username' placeholder='username' value={input.username} onChange={handleInputChange} className={usernameInputClass} />
+              <label for='username' className={input.username || 'placeholder-hidden'}>name</label>
+              <input type='text' name='username' placeholder='name' value={input.username} onChange={handleInputChange} className={usernameInputClass} />
             </>}
 
             <label for='email' className={input.email || 'placeholder-hidden'}>email</label>

@@ -9,11 +9,11 @@ import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Router> */}
-    <BrowserRouter>
+    <Router>
+    {/* <BrowserRouter> */}
       <App />
-    </BrowserRouter>
-    {/* </Router> */}
+    {/* </BrowserRouter> */}
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, Routes, Route, Navigate } from 'react-router-dom';
-
-import Welcome from './pages/Welcome/Welcome';
-import Home from './pages/Home/Home';
-
-// import logo from './logo.svg';
 import './App.css';
+// import Welcome from './pages/Welcome/Welcome';
+import Home from './pages/Home/Home';
+import Profile from './pages/Profile/Profile';
 
 function App() {
   const [user, setUser] = useState({});
@@ -13,12 +11,11 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Welcome user={user} setUser={setUser} />} />
-        <Route path='/home' element={<Home user={user} />} />
-        {/* <Route path='/register' element={<Register />} /> */}
+        {/* DON'T FORGET TO USE /#/ROUTE_NAME */}
+        <Route path='/' exact element={<Home user={user} setUser={setUser} />} />
+        <Route path='/profile' element={<Profile />} />
       </Routes>
     </div>
-
   );
 }
 

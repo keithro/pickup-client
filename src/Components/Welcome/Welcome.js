@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import Register from '../../components/Register/Register';
-import Login from '../../components/Login/Login';
+import React, { useState, useContext } from 'react';
+// import Register from '../Register/Register';
+// import Login from '../Login/Login';
+import AuthContext from '../../store/auth-context';
 import './Welcome.css';
 
 const Welcome = (props) => {
@@ -8,23 +9,24 @@ const Welcome = (props) => {
   const [input, setInput] = useState({ username: '', email: '', password: '', passwordCheck: '' });
   const [isLoading, setIsLoading] = useState(false);
   const [isErrors, setIsErrors] = useState('');
+  const authContext = useContext(AuthContext);
 
   const handleMemberStateChange = () => {
     setIsMember(!isMember);
     // setInput({ username: '', email: '', password: '', passwordCheck: '' });
     setIsErrors('');
-    setIsLoading(false)
+    setIsLoading(false);
   }
   
   const handleInputChange = (event) => {
-    setInput({ ...input, [event.target.name]: event.target.value})
+    setInput({ ...input, [event.target.name]: event.target.value});
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
 
-    let route = isMember ? 'login' : 'register'
+    let route = isMember ? 'login' : 'register';
 
     const res = await fetch(`http://localhost:4000/auth/${route}`, {
       method: 'POST',
@@ -38,17 +40,12 @@ const Welcome = (props) => {
     setIsLoading(false);
 
     if(data.errors) {
-      // TODO: DELETE
-      console.log('data.errors: ', data.errors);
-      // console.log('data.errors[0].msg: ', data.errors[0].msg);
-      // console.log('data.errors.msg: ', data.errors.msg);
-
       const errors = data.errors[0] || data.errors;
       console.log('Your errors variable = ', errors)
       setIsErrors(errors);
     } else {
-      console.log('Success data: ',data);
-
+      console.log(data.token);
+      authContext.login(data.token);
     }
   }
 

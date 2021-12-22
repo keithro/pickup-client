@@ -1,7 +1,7 @@
 # Todo
 - Restrict access to pages with if (!user) { ...redirect to login }?
 - Delete old Login and Register components
--
+- Nav only needs 'Logout' and 'Profile'
 
 ## Live Urls
 [Pick-up App](http://www.keithrodriguez.me/pickup-client/)

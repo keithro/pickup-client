@@ -1,8 +1,7 @@
 import React, { useState, useContext } from 'react';
-// import Register from '../Register/Register';
-// import Login from '../Login/Login';
 import AuthContext from '../../store/auth-context';
 import './Welcome.css';
+import background from '../../img/pick-up-game.jpg';
 
 const Welcome = (props) => {
   const [isMember, setIsMember] = useState(true);
@@ -41,7 +40,7 @@ const Welcome = (props) => {
 
     if(data.errors) {
       const errors = data.errors[0] || data.errors;
-      console.log('Your errors variable = ', errors)
+      console.log('Your errors variable = ', errors);
       setIsErrors(errors);
     } else {
       console.log(data.token);
@@ -57,7 +56,7 @@ const Welcome = (props) => {
   if (isErrors && isErrors.param && isErrors.param === 'password') pwInputClass += 'invalid';
 
   return (
-    <main className="welcome">
+    <main className="welcome" style={{ linearGradient: '(rgba(0,0,0,0.5), rgba(0,0,0,0.5))',backgroundImage: `url(${background})` }} >
       <section className="welcome-panel1">
         <h1 className="welcome-logo">Pick-Up</h1>
         <p className="welcome-tag-line">Start a game, do something</p>

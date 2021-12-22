@@ -1,4 +1,5 @@
-.event-card {
+.user-info-section {
+  flex: 1 1 25%;
   margin: .8rem;
   padding: 1.2rem;
   border-radius: .6rem;

@@ -2,3 +2,7 @@
   height: 100%;
   width: 100%;
 }
+
+.home * {
+  border: 1px solid pink;
+}

@@ -1,0 +1,9 @@
+.home-content {
+  height: 100%;
+}
+.home-content-container {
+  height: calc(100% - 6rem);
+  width: 100%;
+
+  display: flex;
+}

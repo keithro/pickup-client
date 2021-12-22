@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pickup-client/static/css/main.ad6bfc69.css",
+    "main.js": "/pickup-client/static/js/main.a6968bea.js",
+    "index.html": "/pickup-client/index.html",
+    "main.ad6bfc69.css.map": "/pickup-client/static/css/main.ad6bfc69.css.map",
+    "main.a6968bea.js.map": "/pickup-client/static/js/main.a6968bea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ad6bfc69.css",
+    "static/js/main.a6968bea.js"
+  ]
+}

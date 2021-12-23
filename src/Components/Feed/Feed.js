@@ -40,6 +40,27 @@ const Feed = (props) => {
 
     setSelectedEvent(data.event);
     setEventList([data.event, ...eventList]);
+    setInput({
+      title: '',
+      details: '',
+      eventDate: '',
+      location: '',
+      sport: '',
+      skillLevel: '',
+    });
+    setShowEventForm(false);
+
+  }
+
+  const handleShowForm = () => {
+    setShowEventForm(true);
+  }
+
+  const handleCloseForm = () => {
+    setShowEventForm(false);
+  }
+
+  const handleCancel = () => {
     setShowEventForm(false);
     setInput({
       title: '',
@@ -49,11 +70,6 @@ const Feed = (props) => {
       sport: '',
       skillLevel: '',
     });
-
-  }
-
-  const handleToggleShowForm = () => {
-    setShowEventForm(!showEventForm);
   }
 
   const handleInputChange = (event) => {
@@ -62,18 +78,24 @@ const Feed = (props) => {
   
   const eventListJSX = eventList.map(event => {
     return <Event event={event} handleEventClick={handleEventClick} token={token} currentUser={currentUser} />
-  })
+  });
+
+  const modalBGClasses = ['modal-bg', showEventForm ? 'modal-open' : 'modal-closed'].join(' ');
+  const formClasses = ['event-form', showEventForm ? 'modal-open' : 'modal-closed'].join(' ');
 
   return (
     <section className='feed-section'>
       <div className='form-container'>
-        <div className='form-header'>
+        <div className='feed-header'>
           <h2>Upcomeing Events</h2>
-          <button className='form-toggle-btn' type='button' onClick={handleToggleShowForm}>Add</button>
+          <button className='form-open-btn' type='button' onClick={handleShowForm}>Add</button>
         </div>
-        {showEventForm && 
-          <form className='event-form' onSubmit={handleSubmitEvent}>
-          
+
+        <div className={modalBGClasses} onClick={handleCloseForm} >
+        </div>
+          <form className={formClasses} onSubmit={handleSubmitEvent}>
+            <h2 className='form-header'>New Game</h2>
+            
             <label for='title' className={input.title || 'placeholder-hidden'}>title (required)</label>
             <input type='text' name='title' placeholder='title' value={input.title} onChange={handleInputChange} className='title' />
           
@@ -92,10 +114,12 @@ const Feed = (props) => {
             <label for='skillLevel' className={input.skillLevel || 'placeholder-hidden'}>skill level</label>
             <input type='text' name='skillLevel' placeholder='skill level' value={input.skillLevel} onChange={handleInputChange} className='skillLevel' />
 
-            <button type='submit' disabled={isLoading}>Submit</button>
+            <div className='button-container'>
+              <button type='submit' disabled={isLoading}>Submit</button>
+              <button className='form-toggle-btn' type='button' onClick={handleCancel}>Cancel</button>
+            </div>
             
           </form>
-        }
       </div>
       <div className='event-list'>
         {isLoading ? 

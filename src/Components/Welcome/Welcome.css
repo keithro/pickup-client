@@ -5,7 +5,9 @@
   flex-direction: column;
 
   /* Add gradient overlay to background img */
-  box-shadow: inset 0 0 0 100vw rgba(6, 99, 34, 0.8);
+  box-shadow: inset 0 0 0 100vw rgba(6, 99, 34, 0.9);
+  background-position: center;
+  background-size: cover;
 }
 
 .welcome-panel1,
@@ -18,6 +20,7 @@
 
 .welcome-panel1 {
   color: #ffffff;
+  color: --main-color;
 }
 
 .welcome-logo {
@@ -79,6 +82,7 @@
 
 .access-form label {
   margin-top: .6rem;
+  font-size: 1.2rem;
 
   transition: all .3s;
 }

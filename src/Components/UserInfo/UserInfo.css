@@ -4,3 +4,7 @@
   padding: 1.2rem;
   border-radius: .6rem;
 }
+
+.user-info-section .avatar {
+  border-radius: 50%;
+}

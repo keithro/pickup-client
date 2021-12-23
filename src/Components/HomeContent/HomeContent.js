@@ -9,20 +9,44 @@ import EventInfo from '../../components/EventInfo/EventInfo';
 
 
 const HomeContent = (props) => {
+  const [currentUser, setCurrentUser] = useState({
+    _id: '',
+    username: '',
+    avatar: '',
+    followers: [],
+    following: [],
+    invites: [],
+    desc: '',
+    location: '',
+  })
+  const [selectedEvent, setSelectedEvent] = useState({
+    creator: '',
+    title: '',
+    details: '',
+    eventDate: '',
+    createdDate: '',
+    location: '',
+    sport: '',
+    skillLevel: '',
+    creatorName: '',
+    creatorAvatar: '',
+    comments: [],
+    going: [],
+    likes: [],
+  });
   const [eventList, setEventList] = useState([]);
-  const [selectedEvent, setSelectedEvent] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const authContext = useContext(AuthContext);
 
   const handleEventClick = (event) => {
-    console.log(event);
+    // console.log(event);
     setSelectedEvent(event);
   }
 
   const makeApiCall = async () => {
     setIsLoading(true);
 
-    const res = await fetch('http://localhost:4000/events', {
+    const userRes = await fetch('http://localhost:4000/auth', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -30,16 +54,36 @@ const HomeContent = (props) => {
       },
       body: JSON.stringify(),
     });
-    const data = await res.json();
+    const userData = await userRes.json();
+
+
+    console.log('USER DATA: ', userData)
+
+    const eventRes = await fetch('http://localhost:4000/events', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-auth-token': authContext.token
+      },
+      body: JSON.stringify(),
+    });
+    const eventData = await eventRes.json();
 
     setIsLoading(false);
 
-    if(data.errors) {
-      const errors = data.errors[0] || data.errors;
-      console.log('Your errors variable = ', errors);
+    // console.log('EVENT DATA: ', eventData)
+
+    if(eventData.errors) {
+      const eventErrors = eventData.errors[0] || eventData.errors;
+      console.log('Your errors variable = ', eventErrors);
+    } else if (userData.errors) {
+      const userErrors = eventData.errors[0] || eventData.errors;
+      console.log('Your errors variable = ', userErrors);
     } else {
-      setEventList(data.events);
-      setSelectedEvent(data.events[0]);
+      // create function: 'updateStates' to update all at once
+      setEventList(eventData.events);
+      setSelectedEvent(eventData.events[0]);
+      setCurrentUser(userData);
     }
   };
 
@@ -54,8 +98,8 @@ const HomeContent = (props) => {
     <div className='home-content'>
         <Nav />
         <main className='home-content-container'>
-          <UserInfo />
-          <Feed isLoading={isLoading} eventList={eventList} handleEventClick={handleEventClick} />
+          <UserInfo isLoading={isLoading} currentUser={currentUser} />
+          <Feed isLoading={isLoading} setIsLoading={setIsLoading} eventList={eventList} setEventList={setEventList} setSelectedEvent={setSelectedEvent} handleEventClick={handleEventClick} token={authContext.token} currentUser={currentUser} />
           <EventInfo isLoading={isLoading} selectedEvent={selectedEvent} />
         </main>
     </div>

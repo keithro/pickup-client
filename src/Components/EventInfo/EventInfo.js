@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './EventInfo.css';
 
 const EventInfo = (props) => {
+  console.log('Your Event Info Props: ', props);
   const event = props.selectedEvent;
 
   return (

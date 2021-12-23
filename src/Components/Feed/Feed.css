@@ -1,5 +1,50 @@
 .feed-section {
   flex: 2 2 50%;
+  /* overflow: scroll; */
+}
+
+.event-list {
+  height: 100%;
+  overflow: scroll;
+}
+
+.event-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-form label {
+  /* margin-top: .6rem; */
+  font-size: 1.2rem;
+
+  transition: all .3s;
+}
+
+.event-form label.placeholder-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(3rem);
+}
+
+.event-form input {
+  height: 2.8rem;
+  font-size: 1.6rem;
+}
+
+/* TODO: Reconsider this */
+.event-form input.invalid {
+  background: rgb(243, 170, 170);
+}
+
+.event-form button {
+  height: 2.8rem;
+  margin-top: 1.2rem;
+}
+
+.event-form button:disabled {
+  background: rgb(136, 136, 136);
+  color: rgb(61, 61, 61);
+  cursor: not-allowed;
 }
 
 /* .user-info-section {

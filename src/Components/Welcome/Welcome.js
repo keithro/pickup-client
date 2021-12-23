@@ -43,7 +43,7 @@ const Welcome = (props) => {
       console.log('Your errors variable = ', errors);
       setIsErrors(errors);
     } else {
-      console.log(data.token);
+      console.log(data);
       authContext.login(data.token);
     }
   }
@@ -56,7 +56,7 @@ const Welcome = (props) => {
   if (isErrors && isErrors.param && isErrors.param === 'password') pwInputClass += 'invalid';
 
   return (
-    <main className="welcome" style={{ linearGradient: '(rgba(0,0,0,0.5), rgba(0,0,0,0.5))',backgroundImage: `url(${background})` }} >
+    <main className="welcome" style={{ backgroundImage: `url(${background})` }} >
       <section className="welcome-panel1">
         <h1 className="welcome-logo">Pick-Up</h1>
         <p className="welcome-tag-line">Start a game, do something</p>

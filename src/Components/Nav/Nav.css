@@ -1,6 +1,6 @@
 .header {
   height: 6rem;
-  background-color: #214d35;
+  background-color: #3a664e;
   color: #fff;
 
   display: flex;
@@ -54,8 +54,8 @@
 .header .nav-links a {
   /* padding: .4rem .8rem;
   border-radius: 1.4rem; */
-  transition: all 500ms;
   color: #fff;
+  transition: all 500ms;
 }
 
 .header .nav-links a:hover,
@@ -67,7 +67,7 @@
 }
 
 .header .nav-links button {
-  background-color: #214d35;
+  background-color: #3a664e;
   color: #fff;
   border: none;
 }

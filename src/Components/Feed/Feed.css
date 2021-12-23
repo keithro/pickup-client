@@ -1,6 +1,6 @@
 .feed-section {
+
   flex: 2 2 50%;
-  /* overflow: scroll; */
 }
 
 .form-container {
@@ -46,6 +46,10 @@
   font-size: 20px;
 }
 
+.feed-section .filters span {
+  font-weight: 700;
+}
+
 /* --------- */
 .form-container .modal-bg {
   position: fixed;
@@ -89,7 +93,7 @@
 
 .event-form.modal-closed {
   opacity: 0;
-  transform: translateY(100%);
+  transform: translateY(200%);
 }
 
 .event-form label {
@@ -133,7 +137,8 @@
 }
 
 .event-list {
-  height: calc(100% - 4rem);
+  height: calc(100% - 8rem);
+  /* height: 100%; */
   overflow: scroll;
 }
 

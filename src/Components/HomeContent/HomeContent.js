@@ -95,7 +95,7 @@ const HomeContent = (props) => {
 
   return (
     <div className='home-content'>
-        {/* <Nav /> */}
+        <Nav />
         <main className='home-content-container'>
           <UserInfo isLoading={isLoading} currentUser={currentUser} />
           <Feed isLoading={isLoading} setIsLoading={setIsLoading} eventList={eventList} setEventList={setEventList} setSelectedEvent={setSelectedEvent} handleEventClick={handleEventClick} token={authContext.token} currentUser={currentUser} />

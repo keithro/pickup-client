@@ -89,6 +89,9 @@ const Feed = (props) => {
             <FaPlus className='form-open-btn-icon'/>
           </button>
         </div>
+        <div className='filters'>
+          <p><span>Filters: </span>Lol right...in v1?</p>
+        </div>
 
         <div className={modalBGClasses} onClick={handleCloseForm} >
         </div>

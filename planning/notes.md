@@ -19,9 +19,11 @@ Mongoose: exclue fields returned from search with .select('-field_name')
 --ocean-green: #74c69d;
 --ocean-green-2: #52b788;
 --illuminating-emerald: #40916c;
---bottle-green: #2d6a4f;
---brunswick-green: #1b4332;
---dark-jungle-green: #081c15;
+<!-- --bottle-green: #2d6a4f; -->
+<!-- --brunswick-green: #1b4332; -->
+<!-- --dark-jungle-green: #081c15; -->
+
+med: 68ad87
 
 /* SCSS RGB */
 $nyanza: rgba(216, 243, 220, 1);

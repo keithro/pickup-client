@@ -12,7 +12,7 @@ function App() {
   
   return (
     <div className="App">
-      {authContext.isLoggedIn && <Nav /> }
+      {/* {authContext.isLoggedIn && <Nav /> } */}
       <Routes>
         {/* DON'T FORGET TO USE /#/ROUTE_NAME */}
         <Route path='/' exact element={<Home />} />

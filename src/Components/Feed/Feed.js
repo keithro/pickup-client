@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Feed.css';
+import { FaPlus } from 'react-icons/fa';
 
 import Event from '../Event/Event';
 
@@ -9,15 +10,12 @@ const Feed = (props) => {
   const {isLoading, setIsLoading, eventList, setEventList, setSelectedEvent, handleEventClick, currentUser, token} = props;
 
   const [input, setInput] = useState({
-    // creator: '',
     title: '',
     details: '',
     eventDate: '',
     location: '',
     sport: '',
     skillLevel: '',
-    // creatorName: '',
-    // creatorAvatar: '',
   });
 
   const handleSubmitEvent = async (event) => {
@@ -35,8 +33,6 @@ const Feed = (props) => {
     const data = await res.json();
 
     // setIsLoading(false);
-
-    console.log('EVENT DATA', data.event);
 
     setSelectedEvent(data.event);
     setEventList([data.event, ...eventList]);
@@ -88,7 +84,10 @@ const Feed = (props) => {
       <div className='form-container'>
         <div className='feed-header'>
           <h2>Upcomeing Events</h2>
-          <button className='form-open-btn' type='button' onClick={handleShowForm}>Add</button>
+          <button className='form-open-btn' type='button' onClick={handleShowForm}>
+            {/* <FaPlus style={{color: 'black', fontSize: '20px'}}/> */}
+            <FaPlus className='form-open-btn-icon'/>
+          </button>
         </div>
 
         <div className={modalBGClasses} onClick={handleCloseForm} >

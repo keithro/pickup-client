@@ -63,18 +63,21 @@ const Event = (props) => {
         <p><span className='name'>{eventData.creatorName}</span> - <span className='date'>{eventData.eventDate}</span></p>
         <p><span className='sport'>{eventData.sport}</span> at <span className='location'>{eventData.location}</span></p>
         {/* <p>{eventData.details}</p> */}
+        
         <div className='feedback-tray'>
-          <div className='likes' onClick={handleLike}>
-            <FaRegHeart style={{color: 'black', fontSize: '20px'}}/> {eventData.likes.length}
+          <div className='feedback-container'>
+            <div className='likes' onClick={handleLike}>
+              <FaRegHeart style={{color: 'black', fontSize: '20px'}}/> {eventData.likes.length}
 
-            {/* {userLikes ?
-              <FaHeart style={{color: 'red', fontSize: '20px'}}/>
-              :
-              <FaHeart style={{color: 'black', fontSize: '20px'}}/>
-            } */}
+              {/* {userLikes ?
+                <FaHeart style={{color: 'red', fontSize: '20px'}}/>
+                :
+                <FaHeart style={{color: 'black', fontSize: '20px'}}/>
+              } */}
+            </div>
+            <div className='attendee-list'>{attendeeList}</div>
           </div>
           <button className='attend-btn' type='button' onClick={handleAttendEvent}>Attend</button>
-          <div className='attendee-list'>{attendeeList}</div>
         </div>
       </div>
 

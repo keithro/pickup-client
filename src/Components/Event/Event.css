@@ -2,6 +2,9 @@
   margin: .8rem;
   padding: 1.2rem;
   border-radius: .6rem;
+  cursor: pointer;
+  color: #1b4332;
+  background-color: #dceedf;
 
   display: flex;
 }
@@ -9,6 +12,7 @@
 .event-card .avatar {
   height: 6rem;
   width: 6rem;
+  margin-right: 2rem;
   border-radius: 50%;
 }
 
@@ -17,8 +21,13 @@
   display: flex;
 }
 
+.event-card .likes {
+  margin-right: 1rem;
+}
 
-
+.event-card .attend-btn {
+  padding: .7rem 1.4rem;
+}
 
 .attendee-list {
   display: flex;

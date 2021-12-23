@@ -1,8 +1,9 @@
 .home {
   height: 100%;
   width: 100%;
+  background-color: #76a58b;
 }
 
-.home * {
+/* .home * {
   border: 1px solid pink;
-}
+} */

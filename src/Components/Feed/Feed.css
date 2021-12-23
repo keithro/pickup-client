@@ -3,6 +3,29 @@
   /* overflow: scroll; */
 }
 
+.form-container {
+  margin: .8rem;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  color: #1b4332;
+  background-color: #dceedf;
+
+}
+
+.form-header {
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-toggle-btn {
+  padding: .8rem 1.2rem;
+  font-size: 1.4rem;
+  background-color: rgb(233, 157, 157);
+  border-radius: .8rem;
+}
+
 .event-list {
   height: 100%;
   overflow: scroll;

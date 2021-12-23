@@ -18,7 +18,9 @@ const UserInfo = (props) => {
           <div>loading...</div>
         : 
           <>
+            <div className='avatar-container'>
             <img className='avatar' src={avatar}  alt='avatar'/>
+            </div>
             <h2 className='username'>{username}</h2>
             <h4 className='location'>{location}</h4>
             <div className='invites'>

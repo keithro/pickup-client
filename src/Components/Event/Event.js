@@ -58,23 +58,22 @@ const Event = (props) => {
   return (
     <div className='event-card' onClick={() => props.handleEventClick(props.event)}>
       <img className='avatar' src={eventData.creatorAvatar} alt='creator-avatar'/>
-      <div className='invites'>
+      <div className='event-card-info'>
         <h2 className='title'>{eventData.title}</h2>
         <p><span className='name'>{eventData.creatorName}</span> - <span className='date'>{eventData.eventDate}</span></p>
         <p><span className='sport'>{eventData.sport}</span> at <span className='location'>{eventData.location}</span></p>
-        <p>{eventData.details}</p>
+        {/* <p>{eventData.details}</p> */}
         <div className='feedback-tray'>
-          
-          {/* {userLikes ?
-            <FaHeart style={{color: 'red', fontSize: '20px'}}/>
-            :
-            <FaHeart style={{color: 'black', fontSize: '20px'}}/>
-          } */}
-
           <div className='likes' onClick={handleLike}>
             <FaRegHeart style={{color: 'black', fontSize: '20px'}}/> {eventData.likes.length}
+
+            {/* {userLikes ?
+              <FaHeart style={{color: 'red', fontSize: '20px'}}/>
+              :
+              <FaHeart style={{color: 'black', fontSize: '20px'}}/>
+            } */}
           </div>
-          <button type='button' onClick={handleAttendEvent}>Attend</button>
+          <button className='attend-btn' type='button' onClick={handleAttendEvent}>Attend</button>
           <div className='attendee-list'>{attendeeList}</div>
         </div>
       </div>

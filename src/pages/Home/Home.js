@@ -5,7 +5,7 @@ import HomeContent from '../../components/HomeContent/HomeContent';
 import Welcome from '../../components/Welcome/Welcome';
 
 
-const Home = (props) => {
+const Home = () => {
   const authContext = useContext(AuthContext);
 
   return (

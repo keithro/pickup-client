@@ -9,7 +9,8 @@ const AuthContext = React.createContext({
 
 // STATES AND HANDLER FUNCTIONS CONTEXT WILL PROVIDE
 export const AuthContextProvider = (props) => {
-  const [token, setToken] = useState(null);
+  const savedToken = localStorage.getItem('pu-token')
+  const [token, setToken] = useState(savedToken);
 
   // converts token value to True or False:
   // We could probably also just check if there is a token...
@@ -19,11 +20,13 @@ export const AuthContextProvider = (props) => {
 
   // HANDLER FUNCTIONS
   const loginHandler = (token) => {
-    setToken(token)
+    setToken(token);
+    localStorage.setItem('pu-token', token);
   };
 
   const logoutHandler = () => {
     setToken(null);
+    localStorage.removeItem('pu-token');
   };
 
   const contextValue = {

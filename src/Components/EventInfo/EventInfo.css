@@ -3,4 +3,15 @@
   margin: .8rem;
   padding: 1.2rem;
   border-radius: .6rem;
+  color: #1b4332;
+  background-color: #dceedf;
+}
+
+.event-info-section h3,
+.event-info-section p {
+  margin-top: 1.4rem;
+}
+
+.event-info-section span {
+  font-weight: 700;
 }

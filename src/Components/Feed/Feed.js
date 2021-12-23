@@ -66,9 +66,11 @@ const Feed = (props) => {
 
   return (
     <section className='feed-section'>
-      <div>
-        <h2>Upcomeing Events:</h2>
-        <button type='button' onClick={handleToggleShowForm}>Add</button>
+      <div className='form-container'>
+        <div className='form-header'>
+          <h2>Upcomeing Events</h2>
+          <button className='form-toggle-btn' type='button' onClick={handleToggleShowForm}>Add</button>
+        </div>
         {showEventForm && 
           <form className='event-form' onSubmit={handleSubmitEvent}>
           
@@ -81,16 +83,16 @@ const Feed = (props) => {
             <label for='eventData' className={input.eventData || 'placeholder-hidden'}>game data</label>
             <input type='text' name='eventData' placeholder='game data' value={input.eventData} onChange={handleInputChange} className='eventData' />
           
-          <label for='location' className={input.location || 'placeholder-hidden'}>location</label>
-          <input type='text' name='location' placeholder='location' value={input.location} onChange={handleInputChange} className='location' />
-          
-          <label for='sport' className={input.sport || 'placeholder-hidden'}>sport (required)</label>
-          <input type='text' name='sport' placeholder='sport' value={input.sport} onChange={handleInputChange} className='sport' />
-          
-          <label for='skillLevel' className={input.skillLevel || 'placeholder-hidden'}>skill level</label>
-          <input type='text' name='skillLevel' placeholder='skill level' value={input.skillLevel} onChange={handleInputChange} className='skillLevel' />
+            <label for='location' className={input.location || 'placeholder-hidden'}>location</label>
+            <input type='text' name='location' placeholder='location' value={input.location} onChange={handleInputChange} className='location' />
+            
+            <label for='sport' className={input.sport || 'placeholder-hidden'}>sport (required)</label>
+            <input type='text' name='sport' placeholder='sport' value={input.sport} onChange={handleInputChange} className='sport' />
+            
+            <label for='skillLevel' className={input.skillLevel || 'placeholder-hidden'}>skill level</label>
+            <input type='text' name='skillLevel' placeholder='skill level' value={input.skillLevel} onChange={handleInputChange} className='skillLevel' />
 
-          <button type='submit' disabled={isLoading}>Submit</button>
+            <button type='submit' disabled={isLoading}>Submit</button>
             
           </form>
         }

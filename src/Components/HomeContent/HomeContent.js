@@ -91,12 +91,11 @@ const HomeContent = (props) => {
     makeApiCall();
   }, []);
 
-  // console.log('Your eventList: ', eventList);
-  // console.log('Your selectedEvent: ', selectedEvent);
+  // TODO: MOVE NAV TO HOME AND SHOW ONLY IF LOGGED IN.
 
   return (
     <div className='home-content'>
-        <Nav />
+        {/* <Nav /> */}
         <main className='home-content-container'>
           <UserInfo isLoading={isLoading} currentUser={currentUser} />
           <Feed isLoading={isLoading} setIsLoading={setIsLoading} eventList={eventList} setEventList={setEventList} setSelectedEvent={setSelectedEvent} handleEventClick={handleEventClick} token={authContext.token} currentUser={currentUser} />

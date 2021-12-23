@@ -2,9 +2,17 @@
   flex: 1 1 25%;
   margin: .8rem;
   padding: 1.2rem;
-  border-radius: .6rem;
+  border-radius: 1rem;
+  color: #1b4332;
+  background-color: #dceedf;
 }
 
+.user-info-section .avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .user-info-section .avatar {
+  margin: 3rem;
   border-radius: 50%;
 }

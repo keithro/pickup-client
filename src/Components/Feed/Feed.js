@@ -90,7 +90,11 @@ const Feed = (props) => {
           </button>
         </div>
         <div className='filters'>
-          <p><span>Filters: </span>Lol right...in v1?</p>
+          <p><span>Filters: </span>Lol riiight...in v1??</p>
+          <button className='filters-btn' type='button'>sport</button>
+          <button className='filters-btn' type='button'>location</button>
+          <button className='filters-btn' type='button'>skill level</button>
+          <button className='filters-btn' type='button'>date</button>
         </div>
 
         <div className={modalBGClasses} onClick={handleCloseForm} >

@@ -3,7 +3,7 @@ import './EventInfo.css';
 
 const EventInfo = (props) => {
   console.log('Your Event Info Props: ', props);
-  const { title, creatorAvatar, details, eventDate, location, skillLevel, sport} = props.selectedEvent;
+  const { title, creatorAvatar, creatorName, details, eventDate, location, skillLevel, sport} = props.selectedEvent;
 
   return (
     <section className='event-info-section'>
@@ -13,11 +13,24 @@ const EventInfo = (props) => {
         : 
           <>
             <h3 className='title'>{title}</h3>
-            <p className='eventDate'><span>Date:</span>{eventDate}</p>
-            <p className='location'><span>Location:</span>{location}</p>
-            <p className='sport'><span>Sport:</span>{sport}</p>
-            <p className='skillLevel'><span>Skill Level:</span>{skillLevel}</p>
-            <p className='details'><span>Additional Info:</span>{details}</p>
+            <p className='eventDate'><span>Date: </span>{eventDate}</p>
+            <p className='creator'><span>Creator: </span>{creatorName}</p>
+            <p className='location'><span>Location: </span>{location}</p>
+            <p className='sport'><span>Sport: </span>{sport}</p>
+            <p className='skillLevel'><span>Skill Level: </span>{skillLevel}</p>
+            <p className='details'><span>Additional Info: </span>{details}</p>
+            <div className='comments-container'>
+              <div className='comments-heading'>
+                <h4 className='comments'><span>Comments:</span></h4>
+                <button type='button'>Add</button>
+              </div>
+            </div>
+            <div className='going-container'>
+              <div className='going-heading'>
+                <h4 className='going'><span>Going:</span></h4>
+                <button type='button'>Join</button>
+              </div>
+            </div>
           </>
         }
     </section>

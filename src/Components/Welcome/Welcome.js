@@ -12,7 +12,7 @@ const Welcome = (props) => {
 
   const handleMemberStateChange = () => {
     setIsMember(!isMember);
-    // setInput({ username: '', email: '', password: '', passwordCheck: '' });
+    setInput({ username: '', email: '', password: '', passwordCheck: '' });
     setIsErrors('');
     setIsLoading(false);
   }

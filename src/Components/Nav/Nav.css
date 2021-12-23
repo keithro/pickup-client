@@ -1,6 +1,8 @@
 .header {
   height: 6rem;
-  background-color: #3a664e;
+  /* background-color: #3a664e; */
+  /* color: #fff; */
+  background-color: #99b9b0;
   color: #fff;
 
   display: flex;
@@ -23,7 +25,7 @@
 .header .logo {
   font-size: 2.4rem;
   font-weight: 800;
-  color: #fff;
+  color: #3a664e;
 }
 
 .header .nav-links {
@@ -52,28 +54,31 @@
 }
 
 .header .nav-links a {
-  /* padding: .4rem .8rem;
-  border-radius: 1.4rem; */
-  color: #fff;
+  /* color: #fff; */
+  color: #3a664e;
   transition: all 500ms;
 }
 
 .header .nav-links a:hover,
 .header .nav-links a:active {
-  /* background-color: #fff; */
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-  background-color: #3f815d;
+  /* background-color: #3f815d; */
   /* color: #000; */
+  color: #203529;
 }
 
 .header .nav-links button {
-  background-color: #3a664e;
-  color: #fff;
+  /* background-color: #3a664e; */
+  /* color: #fff; */
+  background-color: #99b9b0;
+  color: #3a664e;
   border: none;
+  transition: all 500ms;
 }
 
 .header .nav-links button:hover,
 .header .nav-links button:active {
-  background-color: #3f815d;
+  /* background-color: #3f815d; */
+  color: #203529;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }

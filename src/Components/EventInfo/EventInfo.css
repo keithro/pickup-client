@@ -1,10 +1,11 @@
 .event-info-section {
-  flex: 1 1 25%;
+  flex: 1 1 30%;
   margin: .8rem;
   padding: 1.2rem;
   border-radius: .6rem;
   color: #1b4332;
   background-color: #fff;
+  box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.3);
 }
 
 .event-info-section h3,
@@ -14,4 +15,16 @@
 
 .event-info-section span {
   font-weight: 700;
+}
+
+.comments-heading {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.going-heading {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
 }

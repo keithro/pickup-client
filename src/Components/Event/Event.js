@@ -77,7 +77,7 @@ const Event = (props) => {
             </div>
             <div className='attendee-list'>{attendeeList}</div>
           </div>
-          <button className='attend-btn' type='button' onClick={handleAttendEvent}>Attend</button>
+          <button className='attend-btn' type='button' onClick={handleAttendEvent}>Join</button>
         </div>
       </div>
 

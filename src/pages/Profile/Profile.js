@@ -10,7 +10,7 @@ const Profile = (props) => {
   return (
     <div>
       <Nav />
-      <h1>Welcome to the ridiculously f@#*ing beautiful Profile page!</h1>
+      <h1>Welcome to the ridiculously beautiful Profile page!</h1>
     </div>
   )
 }

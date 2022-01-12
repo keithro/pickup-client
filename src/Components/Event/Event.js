@@ -95,7 +95,7 @@ const Event = (props) => {
                 <FaHeart style={{color: 'red', fontSize: '20px'}}/>
                 :
                 <FaRegHeart style={{color: 'black', fontSize: '20px'}}/>
-              }{eventData.likes.length}
+              } {eventData.likes.length}
             </div>
             <div className='attendee-list'>{attendeeList}</div>
           </div>

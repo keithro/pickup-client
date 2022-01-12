@@ -1,5 +1,7 @@
 # Todo
 - Add comments
+- Change urls to production database
+- Profile page
 - Add tooltip to "going" list or/and add going list to EventInfo
 - 
 - Restrict access to pages with if (!user) { ...redirect to login }?

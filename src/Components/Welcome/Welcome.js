@@ -48,6 +48,7 @@ const Welcome = (props) => {
     }
   }
 
+  // Conditional Classes
   let usernameInputClass = '';
   let emailInputClass = '';
   let pwInputClass = '';

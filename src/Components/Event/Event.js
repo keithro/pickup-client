@@ -9,17 +9,11 @@ const Event = (props) => {
   const [eventData, setEventData] = useState(props.event);
   const [userDoesLike, setUserDoesLike] = useState(false);
 
-  // TODO:  Move "like" heart styling to CSS file
-
   useEffect(() => {
-    console.log('TEST USER ID', currentUser._id);
-    console.log('TEST LIKES ARRAY', eventData.likes);
     setUserDoesLike(false);
 
     eventData.likes.forEach(like => {
-      console.log('TEST LIKE USER ID', like.user);
       if (like.user === currentUser._id) {
-        console.log('TEST IS TRUE!!!');
         setUserDoesLike(true);
       }
     });
@@ -55,19 +49,6 @@ const Event = (props) => {
     setEventData(data.event);
   }
 
-  // console.log("CURRENT USER ID", currentUser._id);
-  // let doesLike = false;
-  // likes.forEach(elem => {
-  //   console.log(elem.user);
-  //   if (elem.user.toString() === currentUser._id.toString()) {
-  //     console.log('wooo')
-  //     // setLikesEvent(true);
-  //     doesLike = true
-  //   }
-  // });
-  // console.log("result of loop: ", doesLike)
-  // setLikesEvent(doesLike);
-
   const attendeeList = eventData.going.map(attendee => {
     return (
       <img
@@ -77,7 +58,7 @@ const Event = (props) => {
         alt="attendee avatar"
       />
     );
-  })
+  });
 
   return (
     <div className='event-card' onClick={() => props.handleEventClick(props.event)}>
@@ -92,9 +73,9 @@ const Event = (props) => {
           <div className='feedback-container'>
             <div className='likes' onClick={handleLike}>
               {userDoesLike ?
-                <FaHeart style={{color: 'red', fontSize: '20px'}}/>
+                <FaHeart className='likes-heart does-like'/>
                 :
-                <FaRegHeart style={{color: 'black', fontSize: '20px'}}/>
+                <FaRegHeart className='likes-heart no-like'/>
               } {eventData.likes.length}
             </div>
             <div className='attendee-list'>{attendeeList}</div>

@@ -39,13 +39,25 @@
   align-items: center; */
 }
 
+.event-card .likes-heart {
+  font-size: 2rem;
+}
+
+.event-card .likes-heart.does-like {
+  color: red;
+}
+
+.event-card .likes-heart.no-like {
+  color: #000;
+}
+
 .attendee-list {
   display: flex;
   margin-left: 2rem;
 }
 
 .attendee-avatar {
-  height: 4rem;
+  /* height: 4rem; */
   width: 4rem;
   border: 3px solid #fff;
   border-radius: 50%;

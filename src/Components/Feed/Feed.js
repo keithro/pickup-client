@@ -6,17 +6,18 @@ import Event from '../Event/Event';
 
 const Feed = (props) => {
   const [showEventForm, setShowEventForm] = useState(false);
-  // Probably need own loading state
+  // Form might need its own loading state
   const {isLoading, setIsLoading, eventList, setEventList, setSelectedEvent, handleEventClick, currentUser, token} = props;
-
-  const [input, setInput] = useState({
+  const initialFormVals = {
     title: '',
     details: '',
     eventDate: '',
     location: '',
     sport: '',
     skillLevel: '',
-  });
+  }
+
+  const [input, setInput] = useState(initialFormVals);
 
   const handleSubmitEvent = async (event) => {
     event.preventDefault();
@@ -36,16 +37,8 @@ const Feed = (props) => {
 
     setSelectedEvent(data.event);
     setEventList([data.event, ...eventList]);
-    setInput({
-      title: '',
-      details: '',
-      eventDate: '',
-      location: '',
-      sport: '',
-      skillLevel: '',
-    });
+    setInput(initialFormVals);
     setShowEventForm(false);
-
   }
 
   const handleShowForm = () => {
@@ -58,14 +51,7 @@ const Feed = (props) => {
 
   const handleCancel = () => {
     setShowEventForm(false);
-    setInput({
-      title: '',
-      details: '',
-      eventDate: '',
-      location: '',
-      sport: '',
-      skillLevel: '',
-    });
+    setInput(initialFormVals);
   }
 
   const handleInputChange = (event) => {
@@ -93,11 +79,10 @@ const Feed = (props) => {
         <div className='feed-header'>
           <h2>Upcomeing Events</h2>
           <button className='form-open-btn' type='button' onClick={handleShowForm}>
-            {/* <FaPlus style={{color: 'black', fontSize: '20px'}}/> */}
             <FaPlus className='form-open-btn-icon'/>
           </button>
         </div>
-        
+
         {/* <div className='filters'>
           <p><span>Filters: </span>Lol riiight...in v1??</p>
           <button className='filters-btn' type='button'>sport</button>
@@ -117,8 +102,8 @@ const Feed = (props) => {
             <label for='details' className={input.details || 'placeholder-hidden'}>details</label>
             <input type='text' name='details' placeholder='details' value={input.details} onChange={handleInputChange} className='details' />
           
-            <label for='eventData' className={input.eventData || 'placeholder-hidden'}>game data</label>
-            <input type='text' name='eventData' placeholder='game data' value={input.eventData} onChange={handleInputChange} className='eventData' />
+            <label for='eventDate' className={input.eventDate || 'placeholder-hidden'}>game date</label>
+            <input type='text' name='eventDate' placeholder='game date' value={input.eventDate} onChange={handleInputChange} className='eventDate' />
           
             <label for='location' className={input.location || 'placeholder-hidden'}>location</label>
             <input type='text' name='location' placeholder='location' value={input.location} onChange={handleInputChange} className='location' />

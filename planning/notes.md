@@ -1,5 +1,6 @@
 # Todo
 - Add comments
+- Change 'user' and 'creator' to 'userID' and 'creatorID' in API.
 - Change urls to production database
 - Profile page
 - Add tooltip to "going" list or/and add going list to EventInfo

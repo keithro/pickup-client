@@ -1,14 +1,21 @@
 # Todo
+- Add comments
+- Add tooltip to "going" list or/and add going list to EventInfo
+- 
 - Restrict access to pages with if (!user) { ...redirect to login }?
 - Delete old Login and Register components
 - Nav only needs 'Logout' and 'Profile'
+
+## Done
+- Fix "like" heart
+
 
 ## Live Urls
 [Pick-up App](http://www.keithrodriguez.me/pickup-client/)
 [Pick-up API](https://pick-up-api.herokuapp.com)
 
 ### Interesting Code or things I learned
-Mongoose: exclue fields returned from search with .select('-field_name')
+Mongoose: exclude fields returned from search with .select('-field_name')
 
 
 

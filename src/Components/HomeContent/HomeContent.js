@@ -55,9 +55,7 @@ const HomeContent = (props) => {
       body: JSON.stringify(),
     });
     const userData = await userRes.json();
-
-
-    console.log('USER DATA: ', userData)
+    // console.log('USER DATA: ', userData)
 
     const eventRes = await fetch('http://localhost:4000/events', {
       method: 'GET',
@@ -68,9 +66,6 @@ const HomeContent = (props) => {
       body: JSON.stringify(),
     });
     const eventData = await eventRes.json();
-
-    setIsLoading(false);
-
     // console.log('EVENT DATA: ', eventData)
 
     if(eventData.errors) {
@@ -85,6 +80,8 @@ const HomeContent = (props) => {
       setSelectedEvent(eventData.events[0]);
       setCurrentUser(userData);
     }
+
+    setIsLoading(false);
   };
 
   useEffect(() => {

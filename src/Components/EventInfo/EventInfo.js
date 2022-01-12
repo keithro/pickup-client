@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './EventInfo.css';
 
 const EventInfo = (props) => {
-  console.log('Your Event Info Props: ', props);
+  // console.log('Your Event Info Props: ', props);
+
   const { title, creatorAvatar, creatorName, details, eventDate, location, skillLevel, sport} = props.selectedEvent;
 
   return (

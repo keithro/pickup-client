@@ -73,7 +73,15 @@ const Feed = (props) => {
   }
   
   const eventListJSX = eventList.map(event => {
-    return <Event event={event} handleEventClick={handleEventClick} token={token} currentUser={currentUser} />
+    return (
+      <Event
+        key={event.id}
+        event={event}
+        handleEventClick={handleEventClick}
+        token={token}
+        currentUser={currentUser}
+      />
+    );
   });
 
   const modalBGClasses = ['modal-bg', showEventForm ? 'modal-open' : 'modal-closed'].join(' ');
@@ -89,13 +97,14 @@ const Feed = (props) => {
             <FaPlus className='form-open-btn-icon'/>
           </button>
         </div>
-        <div className='filters'>
+        
+        {/* <div className='filters'>
           <p><span>Filters: </span>Lol riiight...in v1??</p>
           <button className='filters-btn' type='button'>sport</button>
           <button className='filters-btn' type='button'>location</button>
           <button className='filters-btn' type='button'>skill level</button>
           <button className='filters-btn' type='button'>date</button>
-        </div>
+        </div> */}
 
         <div className={modalBGClasses} onClick={handleCloseForm} >
         </div>

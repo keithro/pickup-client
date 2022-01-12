@@ -4,9 +4,26 @@ import './Event.css';
 
 const Event = (props) => {
   // console.log('Your Event props: ', props);
-  const [likesEvent, setLikesEvent] = useState(false);
-  const [eventData, setEventData] = useState(props.event);
+
   const { currentUser, token } = props;
+  const [eventData, setEventData] = useState(props.event);
+  const [userDoesLike, setUserDoesLike] = useState(false);
+
+  // TODO:  Move "like" heart styling to CSS file
+
+  useEffect(() => {
+    console.log('TEST USER ID', currentUser._id);
+    console.log('TEST LIKES ARRAY', eventData.likes);
+    setUserDoesLike(false);
+
+    eventData.likes.forEach(like => {
+      console.log('TEST LIKE USER ID', like.user);
+      if (like.user === currentUser._id) {
+        console.log('TEST IS TRUE!!!');
+        setUserDoesLike(true);
+      }
+    });
+  }, [eventData]);
 
   const handleLike = async (event) => {
     const res = await fetch(`http://localhost:4000/events/like/${eventData._id}`, {
@@ -52,7 +69,14 @@ const Event = (props) => {
   // setLikesEvent(doesLike);
 
   const attendeeList = eventData.going.map(attendee => {
-    return <img src={attendee.avatar} className='attendee-avatar' alt='attendee avatar'/>
+    return (
+      <img
+        key={attendee.user}
+        src={attendee.avatar}
+        className="attendee-avatar"
+        alt="attendee avatar"
+      />
+    );
   })
 
   return (
@@ -67,13 +91,11 @@ const Event = (props) => {
         <div className='feedback-tray'>
           <div className='feedback-container'>
             <div className='likes' onClick={handleLike}>
-              <FaRegHeart style={{color: 'black', fontSize: '20px'}}/> {eventData.likes.length}
-
-              {/* {userLikes ?
+              {userDoesLike ?
                 <FaHeart style={{color: 'red', fontSize: '20px'}}/>
                 :
-                <FaHeart style={{color: 'black', fontSize: '20px'}}/>
-              } */}
+                <FaRegHeart style={{color: 'black', fontSize: '20px'}}/>
+              }{eventData.likes.length}
             </div>
             <div className='attendee-list'>{attendeeList}</div>
           </div>

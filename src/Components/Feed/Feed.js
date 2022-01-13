@@ -32,6 +32,7 @@ const Feed = (props) => {
       body: JSON.stringify(input),
     });
     const data = await res.json();
+    console.log(data);
 
     // setIsLoading(false);
 
@@ -77,7 +78,7 @@ const Feed = (props) => {
     <section className='feed-section'>
       <div className='form-container'>
         <div className='feed-header'>
-          <h2>Upcomeing Events</h2>
+          <h2>Upcoming Events</h2>
           <button className='form-open-btn' type='button' onClick={handleShowForm}>
             <FaPlus className='form-open-btn-icon'/>
           </button>

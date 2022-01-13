@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Register.css';
 
 const Register = (props) => {
-  const [input, setInput] = useState({ username: '', email: '', password: '', passwordCheck: '' });
+  const [input, setInput] = useState({ name: '', email: '', password: '', passwordCheck: '' });
   const [isLoading, setIsLoading] = useState(false);
   const [isErrors, setIsErrors] = useState('');
 
@@ -46,8 +46,8 @@ const Register = (props) => {
     <div className="register">
       <h2 className='register-heading'>Register</h2>
       <form onSubmit={handleRegister}>
-        <label for='username' className={input.username || 'placeholder-hidden'}>username</label>
-        <input type='text' name='username' placeholder='username' value={input.username} onChange={handleInputChange} />
+        <label for='name' className={input.name || 'placeholder-hidden'}>name</label>
+        <input type='text' name='name' placeholder='name' value={input.name} onChange={handleInputChange} />
         <label for='email' className={input.email || 'placeholder-hidden'}>email</label>
         <input type='text' name='email' placeholder='email' value={input.email} onChange={handleInputChange} />
         <label for='password' className={input.password || 'placeholder-hidden'}>password (min 8 characters)</label>

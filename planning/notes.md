@@ -1,5 +1,8 @@
 # Todo
-- Add comments
+- Move new event form to own component
+- Button to DELETE event
+- Add comments list
+- Add and Delete comments
 - Change 'user' and 'creator' to 'userID' and 'creatorID' in API.
 - Change urls to production database
 - Profile page

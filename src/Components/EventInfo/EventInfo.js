@@ -4,18 +4,31 @@ import './EventInfo.css';
 const EventInfo = (props) => {
   console.log('Your Event Info Props: ', props);
 
-  const { title, creatorAvatar, creatorName, details, eventDate, location, skillLevel, sport, comments, going } = props.selectedEvent;
+  // TODO: Add selectedEvent to a state?
+  const {
+    title,
+    creatorAvatar,
+    creatorName,
+    details,
+    eventDate,
+    createdDate,
+    location,
+    skillLevel,
+    sport,
+    comments,
+    going,
+  } = props.selectedEvent;
 
   // const attendeeList = going.map(attendee => {
   //   return (
   //     <div className='attendee'>
   //       <img
-  //         key={attendee.user}
+  //         key={attendee.userID}
   //         src={attendee.avatar}
   //         className="attendee-avatar"
   //         alt="attendee avatar"
   //       />
-  //       <h4>{attendee.username}</h4>
+  //       <h4>{attendee.name}</h4>
   //     </div>
   //   );
   // });
@@ -29,7 +42,7 @@ const EventInfo = (props) => {
           <>
             <h3 className='title'>{title}</h3>
             <p className='eventDate'><span>Date: </span>{eventDate}</p>
-            <p className='creator'><span>Creator: </span>{creatorName}</p>
+            <p className='creatorName'><span>Creator: </span>{creatorName}</p>
             <p className='location'><span>Location: </span>{location}</p>
             <p className='sport'><span>Sport: </span>{sport}</p>
             <p className='skillLevel'><span>Skill Level: </span>{skillLevel}</p>

@@ -13,11 +13,14 @@ const Event = (props) => {
     setUserDoesLike(false);
 
     eventData.likes.forEach(like => {
-      if (like.user === currentUser._id) {
+      if (like.userID === currentUser._id) {
         setUserDoesLike(true);
       }
     });
   }, [eventData]);
+
+
+  // TODO: Move handlers up to HomeContent and pass down as props
 
   const handleLike = async (event) => {
     const res = await fetch(`http://localhost:4000/events/like/${eventData._id}`, {
@@ -47,6 +50,19 @@ const Event = (props) => {
 
     // console.log('EVENT DATA', data.event);
     setEventData(data.event);
+  }
+
+  const handleDeleteEvent = async (event) => {
+    const res = await fetch(`http://localhost:4000/events/${eventData._id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-auth-token': token
+      },
+      // body: JSON.stringify(input),
+    });
+    const data = await res.json();
+    console.log(data);
   }
 
   const attendeeList = eventData.going.map(attendee => {
@@ -80,7 +96,13 @@ const Event = (props) => {
             </div>
             <div className='attendee-list'>{attendeeList}</div>
           </div>
-          <button className='attend-btn' type='button' onClick={handleAttendEvent}>Join</button>
+          <div className='event-btn-container'>
+            {
+              currentUser._id === eventData.creatorID && <button className='delete-btn' type='button' onClick={handleDeleteEvent}>Delete</button>
+            }
+            
+            <button className='attend-btn' type='button' onClick={handleAttendEvent}>Join</button>
+          </div>
         </div>
       </div>
 

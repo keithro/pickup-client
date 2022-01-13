@@ -4,15 +4,21 @@ import './Welcome.css';
 import background from '../../img/pick-up-game.jpg';
 
 const Welcome = (props) => {
+  const emptyInputVal = {
+    name: "",
+    email: "",
+    password: "",
+    passwordCheck: "",
+  };
   const [isMember, setIsMember] = useState(true);
-  const [input, setInput] = useState({ username: '', email: '', password: '', passwordCheck: '' });
+  const [input, setInput] = useState(emptyInputVal);
   const [isLoading, setIsLoading] = useState(false);
   const [isErrors, setIsErrors] = useState('');
   const authContext = useContext(AuthContext);
 
-  const handleMemberStateChange = () => {
+  const handleMemberStatusChange = () => {
     setIsMember(!isMember);
-    setInput({ username: '', email: '', password: '', passwordCheck: '' });
+    setInput(emptyInputVal);
     setIsErrors('');
     setIsLoading(false);
   }
@@ -49,10 +55,10 @@ const Welcome = (props) => {
   }
 
   // Conditional Classes
-  let usernameInputClass = '';
+  let nameInputClass = '';
   let emailInputClass = '';
   let pwInputClass = '';
-  if (isErrors && isErrors.param && isErrors.param === 'username') usernameInputClass += 'invalid';
+  if (isErrors && isErrors.param && isErrors.param === 'name') nameInputClass += 'invalid';
   if (isErrors && isErrors.param && isErrors.param === 'email') emailInputClass += 'invalid';
   if (isErrors && isErrors.param && isErrors.param === 'password') pwInputClass += 'invalid';
 
@@ -71,8 +77,8 @@ const Welcome = (props) => {
           <h2 className='access-form-heading'>{isMember ? 'Login' : 'Register'}</h2>
           <form onSubmit={handleSubmit}>
             {!isMember && <>
-              <label for='username' className={input.username || 'placeholder-hidden'}>name</label>
-              <input type='text' name='username' placeholder='name' value={input.username} onChange={handleInputChange} className={usernameInputClass} />
+              <label for='name' className={input.name || 'placeholder-hidden'}>name</label>
+              <input type='text' name='name' placeholder='name' value={input.name} onChange={handleInputChange} className={nameInputClass} />
             </>}
 
             <label for='email' className={input.email || 'placeholder-hidden'}>email</label>
@@ -87,7 +93,7 @@ const Welcome = (props) => {
             </>}
 
             <button type='submit' disabled={isLoading}>{isMember ? 'Sign In' : 'Create an Account'}</button>
-            <button type='button' onClick={handleMemberStateChange}>{isMember ? "Don't have an account" : 'Already have an account'}</button>
+            <button type='button' onClick={handleMemberStatusChange}>{isMember ? "Don't have an account" : 'Already have an account'}</button>
           </form>
         </div>
       </section>

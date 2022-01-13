@@ -8,8 +8,8 @@ const UserInfo = (props) => {
 
   const authContext = useContext(AuthContext);
 
-  // const { username, location, following, avatar, invites } = props.currentUser;
-  const { username, avatar, location } = props.currentUser;
+  // const { name, location, following, avatar, invites } = props.currentUser;
+  const { name, avatar, location } = props.currentUser;
   
 
   return (
@@ -21,7 +21,7 @@ const UserInfo = (props) => {
             <div className='avatar-container'>
             <img className='avatar' src={avatar}  alt='avatar'/>
             </div>
-            <h2 className='username'>{username}</h2>
+            <h2 className='name'>{name}</h2>
             <h4 className='location'>{location}</h4>
             <div className='invites'>
               <p>Invites: </p>

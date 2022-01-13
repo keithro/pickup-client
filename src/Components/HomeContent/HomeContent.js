@@ -11,7 +11,7 @@ import EventInfo from '../../components/EventInfo/EventInfo';
 const HomeContent = (props) => {
   const [currentUser, setCurrentUser] = useState({
     _id: '',
-    username: '',
+    name: '',
     avatar: '',
     followers: [],
     following: [],
@@ -20,7 +20,7 @@ const HomeContent = (props) => {
     location: '',
   })
   const [selectedEvent, setSelectedEvent] = useState({
-    creator: '',
+    creatorID: '',
     title: '',
     details: '',
     eventDate: '',
@@ -77,8 +77,10 @@ const HomeContent = (props) => {
     } else {
       // create function: 'updateStates' to update all at once
       setEventList(eventData.events);
-      setSelectedEvent(eventData.events[0]);
       setCurrentUser(userData);
+      if (eventData.events[0]) {
+        setSelectedEvent(eventData.events[0]);
+      }
     }
 
     setIsLoading(false);

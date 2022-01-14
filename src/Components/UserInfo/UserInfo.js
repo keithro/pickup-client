@@ -1,17 +1,12 @@
-import React, { useEffect, useState, useContext } from 'react';
+// import React, { useEffect, useState, useContext } from 'react';
 import './UserInfo.css';
-import AuthContext from '../../store/auth-context';
+// import AuthContext from '../../store/auth-context';
 
 const UserInfo = (props) => {
-  // TODO: DELETE
   // console.log('Your UserInfo props: ', props);
 
-  const authContext = useContext(AuthContext);
-
-  // const { name, location, following, avatar, invites } = props.currentUser;
-  const { name, avatar, location } = props.currentUser;
+  const { name, location, following, avatar, invites } = props.currentUser;
   
-
   return (
     <section className='user-info-section'>
       {props.isLoading ? 

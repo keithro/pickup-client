@@ -1,8 +1,7 @@
-import React, { useState, useContext } from 'react';
-import { Link, Routes, Route, Navigate } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import AuthContext from './store/auth-context';
 import './App.css';
-import Nav from './components/Nav/Nav';
 import Home from './pages/Home/Home';
 import Profile from './pages/Profile/Profile';
 

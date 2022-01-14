@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Feed.css';
 import { FaPlus } from 'react-icons/fa';
 

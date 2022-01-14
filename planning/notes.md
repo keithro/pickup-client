@@ -1,12 +1,12 @@
 # Todo
-- Add env variables for url
+- Move new event form to own component
+- Style login/register form
+- Style new event form
+- Add delete confirmation modal
+- Profile edit page
 - FIND A WAY TO MAKE SURE STATE IS UPDATED AFTER ADDING NEW EVENT
 - Change heights to min-height and remove 'overflow: hidden'
-- Move new event form to own component
-- Add delete confirmation modal
 - Comment dates use [Moment.js](https://momentjs.com/))
-- Change urls to production database
-- Profile page
 - Add tooltip to "going" list or/and add going list to EventInfo
 - 
 
@@ -17,6 +17,7 @@
 - Add and Delete comments
 - Change 'user' and 'creator' to 'userID' and 'creatorID' in API.
 - Nav only needs 'Logout' and 'Profile'
+- Add env variables for url and add production url
 
 
 ## Live Urls

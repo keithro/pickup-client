@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import './Profile.css';
 import Nav from '../../components/Nav/Nav';
 
 const Profile = (props) => {
   
-
-  // If not logged in redirect to home page
   
   return (
     <div>

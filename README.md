@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Links
 
-## Available Scripts
+- [Pick-up App](http://www.keithrodriguez.me/pickup-client/)
+- [client github repo](https://github.com/keithro/trivia-game)
+- [Pick-up API](https://pick-up-api.herokuapp.com)
+- [api github repo](https://github.com/keithro/trivia-game)
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+Pickup is an application to bring people together for pick-up games, workouts, sporting events or other group activities. Users will be able to create games or "events", invite friends, see other user's games, filter by location, activity and skill level. The frontend is built with React and Mongo, Express and Node will be used for the backend.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The app is a work in progress so check back to see additional post MVP feature implementation.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## API
+Built with Node, Mongo and Express
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Wireframes
 
-### `npm run build`
+Below are the wireframe/design and React architecture.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [wireframes](pickup-game-app-jpg)
+- [React Architecture]()
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### MVP/PostMVP
 
-### `npm run eject`
+The functionality will is divided into two separate lists: MPV and PostMVP. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### MVP
+- User sign up and log in 
+- Show pick-up games/events 
+- Allow user to filter games by location, sport/activity, and skill level
+- Allow user to add a game/event
+- Allow users to update profile info and change password
+- Add comments to game/event
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Post MVP
+- Allow users to invite friends to their games
+- Use geolocation to get user location and filter results
+- User photo upload for profile pic
+- Live chat between users
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Components
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Component | Description | 
+| --- | :---: |  
+| App |  | 
+| Login | Allows user to login | 
+| Sign up | Allows user to sign up | 
+| Home | This will contain the Events, User and event Details components | 
+| User | This will show the current user details | 
+| Events | This will render all the evnts and allow the user to filter events based on location, sport and skill level | 
+| Event | These will diplay an individual event with the title, location and other users going | 
+| Comments | Displays event comments | 
+| Edit Profile | Allows user to update info, change password and upload photo | 
+| Chat | Allows users to chat about an event | 
 
-## Learn More
+#### MVP
+| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Initial discovery and research | H | 5hrs| 5hrs | 5hrs |
+| Planning and wireframing | H | 2hrs| 2hrs | 2hrs |
+| Project Worksheet | H | 2hrs| 2hrs | 2hrs |
+|  | H | hrs| hrs | hrs |
+|  | H | hrs| hrs | hrs |
+| Total | H | 33hrs| 44.5hrs | 44.5hrs |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Post MVP
+| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+|  | H | 3hrs| 4hrs | 4hrs |
+| Total | H | 18hrs| 8hrs | hrs |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Additional Libraries
+ None so far.
 
-### Code Splitting
+<!-- ## Code Snippet
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code.  -->
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

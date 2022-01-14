@@ -5,6 +5,7 @@ import { FaPlus } from 'react-icons/fa';
 import Event from '../Event/Event';
 
 const Feed = (props) => {
+  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'https://pick-up-api.herokuapp.com';
   const [showEventForm, setShowEventForm] = useState(false);
   const {isLoading, setIsLoading, eventsData, setEventsData, setSelectedEvent, handleEventClick, currentUser, token} = props;
   const initialFormVals = {
@@ -22,7 +23,7 @@ const Feed = (props) => {
     event.preventDefault();
     setIsLoading(true);
     
-    const res = await fetch('http://localhost:4000/events', {
+    const res = await fetch(`${API_ENDPOINT}/events`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

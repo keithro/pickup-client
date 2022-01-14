@@ -5,6 +5,7 @@ import './Event.css';
 const Event = (props) => {
   // console.log('Your Event props: ', props);
 
+  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'https://pick-up-api.herokuapp.com';
   const { currentUser, token } = props;
   const [eventData, setEventData] = useState(props.event);
   const [userDoesLike, setUserDoesLike] = useState(false);
@@ -23,7 +24,7 @@ const Event = (props) => {
   // TODO: Move handlers up to HomeContent and pass down as props
 
   const handleLike = async (event) => {
-    const res = await fetch(`http://localhost:4000/events/like/${eventData._id}`, {
+    const res = await fetch(`${API_ENDPOINT}/events/like/${eventData._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -38,7 +39,7 @@ const Event = (props) => {
   }
 
   const handleAttendEvent = async (event) => {
-    const res = await fetch(`http://localhost:4000/events/attend/${eventData._id}`, {
+    const res = await fetch(`${API_ENDPOINT}/events/attend/${eventData._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -53,7 +54,7 @@ const Event = (props) => {
   }
 
   const handleDeleteEvent = async (event) => {
-    const res = await fetch(`http://localhost:4000/events/${eventData._id}`, {
+    const res = await fetch(`${API_ENDPOINT}/events/${eventData._id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

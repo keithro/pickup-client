@@ -4,6 +4,7 @@ import './Welcome.css';
 import background from '../../img/pick-up-game.jpg';
 
 const Welcome = (props) => {
+  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'https://pick-up-api.herokuapp.com';
   const emptyInputVal = {
     name: "",
     email: "",
@@ -33,7 +34,7 @@ const Welcome = (props) => {
 
     let route = isMember ? 'login' : 'register';
 
-    const res = await fetch(`http://localhost:4000/auth/${route}`, {
+    const res = await fetch(`${API_ENDPOINT}/auth/${route}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

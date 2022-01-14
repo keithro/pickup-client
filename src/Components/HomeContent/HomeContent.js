@@ -9,6 +9,7 @@ import EventInfo from '../../components/EventInfo/EventInfo';
 
 
 const HomeContent = (props) => {
+  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'https://pick-up-api.herokuapp.com';
   const [currentUser, setCurrentUser] = useState({
     _id: '',
     name: '',
@@ -45,7 +46,7 @@ const HomeContent = (props) => {
   const makeApiCall = async () => {
     setIsLoading(true);
 
-    const userRes = await fetch('http://localhost:4000/auth', {
+    const userRes = await fetch(`${API_ENDPOINT}/auth`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -56,7 +57,7 @@ const HomeContent = (props) => {
     const userData = await userRes.json();
     // console.log('USER DATA: ', userData)
 
-    const eventRes = await fetch('http://localhost:4000/events', {
+    const eventRes = await fetch(`${API_ENDPOINT}/events`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

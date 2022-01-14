@@ -6,6 +6,7 @@ import AuthContext from '../../store/auth-context';
 const EventInfo = (props) => {
   console.log('Your Event Info Props: ', props);
 
+  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'https://pick-up-api.herokuapp.com';
   const authContext = useContext(AuthContext);
   const [newCommentInput, setNewCommentInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -30,10 +31,7 @@ const EventInfo = (props) => {
     event.preventDefault();
     setIsLoading(true);
 
-    console.log('You submitted this: ', newCommentInput);
-    
-    // const res = await fetch(`http://localhost:4000/events/comment/${_id}`, {
-    const res = await fetch(`http://localhost:4000/events/comment/${_id}`, {
+    const res = await fetch(`${API_ENDPOINT}/events/comment/${_id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -42,8 +40,6 @@ const EventInfo = (props) => {
       body: JSON.stringify({text: newCommentInput}),
     });
     const data = await res.json();
-    console.log(data);
-
     props.setSelectedEvent(data.event);
     setIsLoading(false);
     setNewCommentInput('');
@@ -54,7 +50,7 @@ const EventInfo = (props) => {
   }
 
   const handleDeleteComment = async (commentID) => {
-    const res = await fetch(`http://localhost:4000/events/comment/${_id}/${commentID}`, {
+    const res = await fetch(`${API_ENDPOINT}/events/comment/${_id}/${commentID}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

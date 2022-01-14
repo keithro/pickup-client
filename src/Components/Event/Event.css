@@ -57,11 +57,28 @@
 }
 
 .attendee-avatar {
-  /* height: 4rem; */
+  height: 4rem;
   width: 4rem;
   border: 3px solid #fff;
   border-radius: 50%;
   margin-left: -.8rem;
+}
+
+.delete-btn {
+  padding: .7rem 1.4rem;
+  background-color: var(--red-light);
+  color: var(--red-dark);
+  margin-right: .6rem;
+  border: none;
+  border-radius: 3rem;
+  transition: all 400ms;
+}
+
+.delete-btn:hover {
+  color: #fff;
+  /* background-color: #da4328; */
+  background-color: var(--red-medium);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .attend-btn {
@@ -70,7 +87,7 @@
   /* background-color: #cfd8d7; */
   color: #1b4332;
   border: none;
-  justify-self: flex-end;
+  /* justify-self: flex-end; */
   border-radius: 3rem;
   transition: all 400ms;
 }
@@ -78,6 +95,6 @@
 .attend-btn:hover {
   color: #fff;
   /* background-color: #3f815d; */
-  background-color: #7eb497;
+  background-color: #3f815d;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }

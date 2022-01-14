@@ -6,8 +6,7 @@ import Event from '../Event/Event';
 
 const Feed = (props) => {
   const [showEventForm, setShowEventForm] = useState(false);
-  // Form might need its own loading state
-  const {isLoading, setIsLoading, eventList, setEventList, setSelectedEvent, handleEventClick, currentUser, token} = props;
+  const {isLoading, setIsLoading, eventsData, setEventsData, setSelectedEvent, handleEventClick, currentUser, token} = props;
   const initialFormVals = {
     title: '',
     details: '',
@@ -21,7 +20,7 @@ const Feed = (props) => {
 
   const handleSubmitEvent = async (event) => {
     event.preventDefault();
-    // setIsLoading(true);
+    setIsLoading(true);
     
     const res = await fetch('http://localhost:4000/events', {
       method: 'POST',
@@ -34,10 +33,10 @@ const Feed = (props) => {
     const data = await res.json();
     console.log(data);
 
-    // setIsLoading(false);
+    setIsLoading(false);
 
+    setEventsData([data.event, ...eventsData]);
     setSelectedEvent(data.event);
-    setEventList([data.event, ...eventList]);
     setInput(initialFormVals);
     setShowEventForm(false);
   }
@@ -59,10 +58,9 @@ const Feed = (props) => {
     setInput({ ...input, [event.target.name]: event.target.value});
   }
   
-  const eventListJSX = eventList.map(event => {
+  const eventList = eventsData.map(event => {
     return (
       <Event
-        key={event.id}
         event={event}
         handleEventClick={handleEventClick}
         token={token}
@@ -78,7 +76,7 @@ const Feed = (props) => {
     <section className='feed-section'>
       <div className='form-container'>
         <div className='feed-header'>
-          <h2>Upcoming Events</h2>
+          <h2>Upcoming Games &#38; Events</h2>
           <button className='form-open-btn' type='button' onClick={handleShowForm}>
             <FaPlus className='form-open-btn-icon'/>
           </button>
@@ -113,7 +111,12 @@ const Feed = (props) => {
             <input type='text' name='sport' placeholder='sport' value={input.sport} onChange={handleInputChange} className='sport' />
             
             <label for='skillLevel' className={input.skillLevel || 'placeholder-hidden'}>skill level</label>
-            <input type='text' name='skillLevel' placeholder='skill level' value={input.skillLevel} onChange={handleInputChange} className='skillLevel' />
+            <select name='skillLevel' id='skillLevel' value={input.skillLevel} onChange={handleInputChange} className='skillLevel' >
+              <option value='Any'>Any</option>
+              <option value='Beginner'>Beginner</option>
+              <option value='Intermediate'>Intermediate</option>
+              <option value='Advanced'>Advanced</option>
+            </select>
 
             <div className='button-container'>
               <button type='submit' disabled={isLoading}>Submit</button>
@@ -127,7 +130,7 @@ const Feed = (props) => {
           <div>loading...</div>
         : 
           <>
-            {eventListJSX}
+            {eventList}
           </>
         }
       </div>

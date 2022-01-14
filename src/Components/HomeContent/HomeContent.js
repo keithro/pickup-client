@@ -34,12 +34,11 @@ const HomeContent = (props) => {
     going: [],
     likes: [],
   });
-  const [eventList, setEventList] = useState([]);
+  const [eventsData, setEventsData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const authContext = useContext(AuthContext);
 
   const handleEventClick = (event) => {
-    // console.log(event);
     setSelectedEvent(event);
   }
 
@@ -66,7 +65,7 @@ const HomeContent = (props) => {
       body: JSON.stringify(),
     });
     const eventData = await eventRes.json();
-    // console.log('EVENT DATA: ', eventData)
+    console.log('ALL EVENT DATA: ', eventData)
 
     if(eventData.errors) {
       const eventErrors = eventData.errors[0] || eventData.errors;
@@ -76,7 +75,7 @@ const HomeContent = (props) => {
       console.log('Your errors variable = ', userErrors);
     } else {
       // create function: 'updateStates' to update all at once
-      setEventList(eventData.events);
+      setEventsData(eventData.events);
       setCurrentUser(userData);
       if (eventData.events[0]) {
         setSelectedEvent(eventData.events[0]);
@@ -93,15 +92,29 @@ const HomeContent = (props) => {
   // TODO: MOVE NAV TO HOME AND SHOW ONLY IF LOGGED IN.
 
   return (
-    <div className='home-content'>
-        <Nav />
-        <main className='home-content-container'>
-          <UserInfo isLoading={isLoading} currentUser={currentUser} />
-          <Feed isLoading={isLoading} setIsLoading={setIsLoading} eventList={eventList} setEventList={setEventList} setSelectedEvent={setSelectedEvent} handleEventClick={handleEventClick} token={authContext.token} currentUser={currentUser} />
-          <EventInfo isLoading={isLoading} selectedEvent={selectedEvent} />
-        </main>
+    <div className="home-content">
+      <Nav />
+      <main className="home-content-container">
+        <UserInfo isLoading={isLoading} currentUser={currentUser} />
+        <Feed
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+          eventsData={eventsData}
+          setEventsData={setEventsData}
+          setSelectedEvent={setSelectedEvent}
+          handleEventClick={handleEventClick}
+          token={authContext.token}
+          currentUser={currentUser}
+        />
+        <EventInfo
+          isLoading={isLoading}
+          currentUser={currentUser}
+          selectedEvent={selectedEvent}
+          setSelectedEvent={setSelectedEvent}
+        />
+      </main>
     </div>
-  )
+  );
 }
 
 export default HomeContent;

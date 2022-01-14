@@ -2,7 +2,7 @@
   height: 100%;
   /* height: calc(100% - 7rem); */
   width: 100%;
-  background-color: #cfd8d7;
+  background-color: var(--gray-light);
   overflow: hidden;
 }
 

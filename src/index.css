@@ -1,3 +1,22 @@
+:root {
+  --green-light: #99b9b0;
+  --green-medium: #3f815d;
+  --green-dark: #3a664e;
+  --green-darkest: #1b4332;
+
+  --gray-light: #f3f3f3;
+  --gray-medium: #d4d1d1;
+  --gray-dark: #7a7a7a;
+
+  --red-light: #f57862;
+  --red-medium: #e7573d;
+  --red-dark: #251a17;
+  /* --red-darkest: #3a664e; */
+
+  --radius-sm: .3rem;
+  --radius-md: .6rem;
+}
+
 * {
   margin: 0;
   padding: 0;

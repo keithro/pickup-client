@@ -8,8 +8,7 @@
   box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.3);
 }
 
-.event-info-section h3,
-.event-info-section p {
+.event-info-section .event-details>* {
   margin-top: 1.4rem;
 }
 
@@ -17,14 +16,112 @@
   font-weight: 700;
 }
 
-.comments-heading {
+.event-info-section .going-heading {
   margin-top: 2rem;
   display: flex;
   justify-content: space-between;
 }
 
-.going-heading {
+.event-info-section .attendee {
+  display: flex;
+  align-items: center;
+}
+
+.event-info-section .attendee-avatar {
+  margin: 0 .6rem;
+}
+
+.event-info-section .attendee-name {
+  margin: 0;
+}
+
+.event-info-section .comments-heading {
   margin-top: 2rem;
   display: flex;
   justify-content: space-between;
+}
+
+.event-info-section .comment {
+  margin-top: .6rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-medium);
+}
+
+.event-info-section .comment-heading {
+  background-color: var(--gray-light);
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+}
+
+.event-info-section .comment-avatar {
+    height: 4rem;
+    width: 4rem;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    margin-right: .6rem;
+}
+
+.event-info-section .comment-body {
+  padding: .6rem;
+}
+
+.event-info-section .comment-text {
+  font-size: 1.4rem;
+}
+
+.event-info-section .comment-footer {
+  font-size: 1rem;
+  color: var(--gray-dark);
+  padding: .6rem;
+  /* margin-top: .6rem; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-info-section .comment-delete-btn {
+  cursor: pointer;
+  transition: color 300ms;
+}
+
+.event-info-section .comment-delete-btn:hover {
+  color: var(--red-medium);
+}
+
+.event-info-section .new-comment {
+  margin-top: .6rem;
+}
+
+.event-info-section .new-comment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-info-section .new-comment-label {
+  font-size: 1.2rem;
+  color: var(--gray-dark);
+}
+
+.event-info-section .new-comment-input {
+  height: 5rem;
+  padding: .6rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-medium);
+  line-height: 1.5;
+  resize: none;
+}
+
+.event-info-section .new-comment-submit-btn {
+  margin-top: .6rem;
+  padding: .7rem;
+  color: var(--gray-dark);
+  border-radius: var(--radius-md);
+  border: none;
+  transition: all 300ms;
+}
+
+.event-info-section .new-comment-submit-btn:hover,
+.event-info-section .new-comment-submit-btn:active {
+  color: #000;
+  background-color: var(--gray-medium);
 }

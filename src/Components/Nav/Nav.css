@@ -25,7 +25,18 @@
 .header .logo {
   font-size: 2.4rem;
   font-weight: 800;
-  color: #3a664e;
+  color: #1b4332;
+  color: #fff;
+}
+
+.header .logo-pick {
+  display: inline-block;
+  transform: translateY(2px);
+}
+
+.header .logo-up {
+  display: inline-block;
+  transform: translateY(-2px);
 }
 
 .header .nav-links {

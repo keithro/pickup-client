@@ -68,7 +68,7 @@ const Event = (props) => {
   const attendeeList = eventData.going.map(attendee => {
     return (
       <img
-        key={attendee.user}
+        key={attendee.userID}
         src={attendee.avatar}
         className="attendee-avatar"
         alt="attendee avatar"
@@ -77,7 +77,7 @@ const Event = (props) => {
   });
 
   return (
-    <div className='event-card' onClick={() => props.handleEventClick(props.event)}>
+    <div key={eventData._id} className='event-card' onClick={() => props.handleEventClick(props.event)}>
       <img className='avatar' src={eventData.creatorAvatar} alt='creator-avatar'/>
       <div className='event-card-info'>
         <h2 className='title'>{eventData.title}</h2>

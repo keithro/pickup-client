@@ -6,8 +6,6 @@ import Home from './pages/Home/Home';
 import Profile from './pages/Profile/Profile';
 
 function App() {
-  console.log({ REACT_APP_API_ENDPOINT: process.env.REACT_APP_API_ENDPOINT })
-
   // const [user, setUser] = useState({});
   const authContext = useContext(AuthContext);
   

@@ -1,11 +1,14 @@
 .home-content {
-  height: 100%;
+  min-height: 100%;
+  position: relative;
   /* overflow: hidden; */
 }
 .home-content-container {
-  height: calc(100% - 6rem);
+  /* height: calc(100% - 6rem); */
   /* width: 100%; */
   /* overflow: hidden; */
+  padding-top: 6rem;
 
   display: flex;
+  align-items: flex-start;
 }

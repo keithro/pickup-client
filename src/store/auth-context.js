@@ -15,8 +15,6 @@ export const AuthContextProvider = (props) => {
   // converts token value to True or False:
   // We could probably also just check if there is a token...
   const isLoggedIn = !!token;
-  // TODO: DELETE - FOR TESTING ONLY
-  // const isLoggedIn = true;
 
   // HANDLER FUNCTIONS
   const loginHandler = (token) => {

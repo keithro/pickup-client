@@ -3,73 +3,70 @@ import './Feed.css';
 import { FaPlus } from 'react-icons/fa';
 
 import Event from '../Event/Event';
+import NewEventForm from '../NewEventForm/NewEventForm';
 
 const Feed = (props) => {
-  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
+  // console.log('Your Feed props: ', props);
+
   const [showEventForm, setShowEventForm] = useState(false);
-  const {isLoading, setIsLoading, eventsData, setEventsData, setSelectedEvent, handleEventClick, currentUser, token} = props;
-  const initialFormVals = {
-    title: '',
-    details: '',
-    eventDate: '',
-    location: '',
-    sport: '',
-    skillLevel: '',
-  }
+  const {isLoading, eventsData, setEventsData, setSelectedEvent, handleEventClick, currentUser} = props;
 
-  const [input, setInput] = useState(initialFormVals);
+  // FIXME: FORM ITEMS
+  // const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
+  // const initialFormVals = {
+  //   title: '',
+  //   details: '',
+  //   eventDate: '',
+  //   location: '',
+  //   sport: '',
+  //   skillLevel: '',
+  // }
+  // const [input, setInput] = useState(initialFormVals);
 
-  const handleSubmitEvent = async (event) => {
-    event.preventDefault();
-    setIsLoading(true);
+  // const handleSubmitEvent = async (event) => {
+  //   event.preventDefault();
+  //   setIsLoading(true);
     
-    const res = await fetch(`${API_ENDPOINT}/events`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-auth-token': props.token
-      },
-      body: JSON.stringify(input),
-    });
-    const data = await res.json();
-    console.log(data);
+  //   const res = await fetch(`${API_ENDPOINT}/events`, {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'x-auth-token': props.token
+  //     },
+  //     body: JSON.stringify(input),
+  //   });
+  //   const data = await res.json();
+  //   console.log(data);
 
-    // ORIGINAL
-    // setEventsData([...eventsData, data.event]);
-    // SECOND ITERATION
-    // const newEventsArray = [...eventsData].unshift(data.event)
-    // setEventsData(newEventsArray);
-    // THIRD ITERATION
-    // setEventsData((eventsData) => {
-    //   return [...eventsData].unshift(data.event);
-    // })
-    // FOURTH ITERATION
-    setEventsData((eventsData) => {
-      return [...eventsData, data.event];
-    })
-    setSelectedEvent(data.event);
-    setInput(initialFormVals);
-    setShowEventForm(false);
+  //   setEventsData((eventsData) => {
+  //     return [...eventsData, data.event];
+  //   })
+  //   setSelectedEvent(data.event);
+  //   setInput(initialFormVals);
+  //   setShowEventForm(false);
 
-    setIsLoading(false);
-  }
+  //   setIsLoading(false);
+  // }
 
   const handleShowForm = () => {
     setShowEventForm(true);
   }
 
-  const handleCloseForm = () => {
-    setShowEventForm(false);
-  }
+  // FIXME: NO LONGER USING, DELETE
+  // const handleCloseForm = () => {
+  //   setShowEventForm(false);
+  //   setInput(initialFormVals);
+  // }
 
-  const handleCancel = () => {
-    setShowEventForm(false);
-    setInput(initialFormVals);
-  }
+  // FIXME: FORM ITEMS
+  // const handleCancel = () => {
+  //   setShowEventForm(false);
+  //   setInput(initialFormVals);
+  // }
 
-  const handleInputChange = (event) => {
-    setInput({ ...input, [event.target.name]: event.target.value});
-  }
+  // const handleInputChange = (event) => {
+  //   setInput({ ...input, [event.target.name]: event.target.value});
+  // }
   
   const eventList = eventsData.map(event => {
     return (
@@ -77,26 +74,32 @@ const Feed = (props) => {
         key={event._id}
         event={event}
         handleEventClick={handleEventClick}
-        token={token}
         currentUser={currentUser}
       />
     );
   });
 
-  const modalBGClasses = ['modal-bg', showEventForm ? 'modal-open' : 'modal-closed'].join(' ');
-  const formClasses = ['event-form', showEventForm ? 'modal-open' : 'modal-closed'].join(' ');
+  // FIXME: FORM ITEMS
+  // const modalBGClasses = ['modal-bg', showEventForm ? 'modal-open' : 'modal-closed'].join(' ');
+  // const formClasses = ['event-form', showEventForm ? 'modal-open' : 'modal-closed'].join(' ');
 
   return (
-    <section className='feed-section'>
-      <div className='form-container'>
-        <div className='feed-header'>
-          <h2>Upcoming Games &#38; Events</h2>
-          <button className='form-open-btn' type='button' onClick={handleShowForm}>
-            <FaPlus className='form-open-btn-icon'/>
-          </button>
-        </div>
+    <section className="feed-section">
+      {/* FIXME: FORM ITEMS */}
+      {/* <div className='form-container'> */}
 
-        {/* <div className='filters'>
+      <div className="feed-header">
+        <h2>Upcoming Games &#38; Events</h2>
+        <button
+          className="form-open-btn"
+          type="button"
+          onClick={handleShowForm}
+        >
+          <FaPlus className="form-open-btn-icon" />
+        </button>
+      </div>
+
+      {/* <div className='filters'>
           <p><span>Filters: </span>Lol riiight...in v1??</p>
           <button className='filters-btn' type='button'>sport</button>
           <button className='filters-btn' type='button'>location</button>
@@ -104,7 +107,8 @@ const Feed = (props) => {
           <button className='filters-btn' type='button'>date</button>
         </div> */}
 
-        <div className={modalBGClasses} onClick={handleCloseForm} >
+      {/* FIXME: FORM ITEMS */}
+      {/* <div className={modalBGClasses} onClick={handleCloseForm} >
         </div>
           <form className={formClasses} onSubmit={handleSubmitEvent}>
             <h2 className='form-header'>New Game</h2>
@@ -117,9 +121,6 @@ const Feed = (props) => {
           
             <label for='eventDate' className={input.eventDate || 'placeholder-hidden'}>game date</label>
             <input type='date' min='2020-01-01' name='eventDate' placeholder='game date' value={input.eventDate} onChange={handleInputChange} className='eventDate' />
-          
-            {/* <label for='eventTime' className={input.eventTime || 'placeholder-hidden'}>game time</label>
-            <input type='time' min='2020-01-01' name='eventTime' placeholder='game time' value={input.eventTime} onChange={handleInputChange} className='eventTime' /> */}
           
             <label for='location' className={input.location || 'placeholder-hidden'}>location</label>
             <input type='text' name='location' placeholder='location' value={input.location} onChange={handleInputChange} className='location' />
@@ -141,18 +142,18 @@ const Feed = (props) => {
             </div>
             
           </form>
-      </div>
-      <div className='event-list'>
-        {isLoading ? 
-          <div>loading...</div>
-        : 
-          <>
-            {eventList}
-          </>
-        }
+      </div> */}
+      <NewEventForm
+        showEventForm={showEventForm}
+        setShowEventForm={setShowEventForm}
+        eventsData={eventsData}
+        setEventsData={setEventsData}
+      />
+      <div className="event-list">
+        {isLoading ? <div>loading...</div> : <>{eventList}</>}
       </div>
     </section>
-  )
+  );
 }
 
 export default Feed;

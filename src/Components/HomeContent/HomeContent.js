@@ -10,6 +10,7 @@ import EventInfo from '../../components/EventInfo/EventInfo';
 
 const HomeContent = (props) => {
   const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
+  const authContext = useContext(AuthContext);
   const [currentUser, setCurrentUser] = useState({
     _id: '',
     name: '',
@@ -37,7 +38,6 @@ const HomeContent = (props) => {
   });
   const [eventsData, setEventsData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const authContext = useContext(AuthContext);
 
   const handleEventClick = (event) => {
     setSelectedEvent(event);
@@ -90,22 +90,18 @@ const HomeContent = (props) => {
     makeApiCall();
   }, []);
 
-  // TODO: MOVE NAV TO HOME AND SHOW ONLY IF LOGGED IN.
-
   return (
     <div className="home-content">
       <Nav />
       <main className="home-content-container">
         <UserInfo isLoading={isLoading} currentUser={currentUser} />
         <Feed
+          currentUser={currentUser}
           isLoading={isLoading}
-          setIsLoading={setIsLoading}
+          // setIsLoading={setIsLoading}
           eventsData={eventsData}
           setEventsData={setEventsData}
-          setSelectedEvent={setSelectedEvent}
           handleEventClick={handleEventClick}
-          token={authContext.token}
-          currentUser={currentUser}
         />
         <EventInfo
           isLoading={isLoading}

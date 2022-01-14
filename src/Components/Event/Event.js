@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import './Event.css';
+
+import AuthContext from '../../store/auth-context';
 
 const Event = (props) => {
   // console.log('Your Event props: ', props);
 
   const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
-  console.log('API Endpoint: ', API_ENDPOINT);
-  const { currentUser, token } = props;
+  const authContext = useContext(AuthContext);
   const [eventData, setEventData] = useState(props.event);
   const [userDoesLike, setUserDoesLike] = useState(false);
 
@@ -15,7 +16,7 @@ const Event = (props) => {
     setUserDoesLike(false);
 
     eventData.likes.forEach(like => {
-      if (like.userID === currentUser._id) {
+      if (like.userID === props.currentUser._id) {
         setUserDoesLike(true);
       }
     });
@@ -29,7 +30,7 @@ const Event = (props) => {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'x-auth-token': token
+        'x-auth-token': authContext.token
       },
       // body: JSON.stringify(input),
     });
@@ -44,7 +45,7 @@ const Event = (props) => {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'x-auth-token': token
+        'x-auth-token': authContext.token
       },
       // body: JSON.stringify(input),
     });
@@ -59,7 +60,7 @@ const Event = (props) => {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        'x-auth-token': token
+        'x-auth-token': authContext.token
       },
       // body: JSON.stringify(input),
     });
@@ -100,7 +101,7 @@ const Event = (props) => {
           </div>
           <div className='event-btn-container'>
             {
-              currentUser._id === eventData.creatorID && <button className='delete-btn' type='button' onClick={handleDeleteEvent}>Delete</button>
+              props.currentUser._id === eventData.creatorID && <button className='delete-btn' type='button' onClick={handleDeleteEvent}>Delete</button>
             }
             
             <button className='attend-btn' type='button' onClick={handleAttendEvent}>Join</button>

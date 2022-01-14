@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/pickup-client/static/css/main.7e122494.css",
-    "main.js": "/pickup-client/static/js/main.07d8f908.js",
+    "main.css": "/pickup-client/static/css/main.759688d2.css",
+    "main.js": "/pickup-client/static/js/main.334439ee.js",
     "static/media/pick-up-game.jpg": "/pickup-client/static/media/pick-up-game.75a873f8d902b393807e.jpg",
     "index.html": "/pickup-client/index.html",
-    "main.7e122494.css.map": "/pickup-client/static/css/main.7e122494.css.map",
-    "main.07d8f908.js.map": "/pickup-client/static/js/main.07d8f908.js.map"
+    "main.759688d2.css.map": "/pickup-client/static/css/main.759688d2.css.map",
+    "main.334439ee.js.map": "/pickup-client/static/js/main.334439ee.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e122494.css",
-    "static/js/main.07d8f908.js"
+    "static/css/main.759688d2.css",
+    "static/js/main.334439ee.js"
   ]
 }

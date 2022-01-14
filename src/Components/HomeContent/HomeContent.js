@@ -9,7 +9,7 @@ import EventInfo from '../../components/EventInfo/EventInfo';
 
 
 const HomeContent = (props) => {
-  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'https://pick-up-api.herokuapp.com';
+  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
   const [currentUser, setCurrentUser] = useState({
     _id: '',
     name: '',
@@ -66,7 +66,7 @@ const HomeContent = (props) => {
       body: JSON.stringify(),
     });
     const eventData = await eventRes.json();
-    console.log('ALL EVENT DATA: ', eventData)
+    // console.log('ALL EVENT DATA: ', eventData)
 
     if(eventData.errors) {
       const eventErrors = eventData.errors[0] || eventData.errors;

@@ -6,7 +6,7 @@ import AuthContext from '../../store/auth-context';
 const EventInfo = (props) => {
   // console.log('Your Event Info Props: ', props);
 
-  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'https://pick-up-api.herokuapp.com';
+  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
   const authContext = useContext(AuthContext);
   const [newCommentInput, setNewCommentInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);

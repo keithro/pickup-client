@@ -4,7 +4,7 @@ import './Welcome.css';
 import background from '../../img/pick-up-game.jpg';
 
 const Welcome = (props) => {
-  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'https://pick-up-api.herokuapp.com';
+  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
   const emptyInputVal = {
     name: "",
     email: "",

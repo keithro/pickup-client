@@ -5,7 +5,7 @@ import './Event.css';
 const Event = (props) => {
   // console.log('Your Event props: ', props);
 
-  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'https://pick-up-api.herokuapp.com';
+  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
   console.log('API Endpoint: ', API_ENDPOINT);
   const { currentUser, token } = props;
   const [eventData, setEventData] = useState(props.event);

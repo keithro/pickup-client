@@ -133,11 +133,8 @@ const EventInfo = (props) => {
               {commentList}
               <div className='new-comment'>
                 <form className='new-comment-form' onSubmit={handleCommentSubmit} >
-                  <label for='newComment' className='new-comment-label'>New Comment</label>
-                  <textarea name='newComment' placeholder='comment...' value={newCommentInput} onChange={handleCommentInputChange} className='new-comment-input' />
-
-                  {/* <input type='text' name='newComment' value={newCommentInput} onChange={handleCommentInputChange} className='new-comment-input' /> */}
-
+                  <label for='newComment' className='new-comment-label'>Add Comment</label>
+                  <textarea name='newComment' value={newCommentInput} onChange={handleCommentInputChange} className='new-comment-input' />
                   <button type='submit'className='new-comment-submit-btn' disabled={isLoading}>Add</button>
                 </form>
               </div>

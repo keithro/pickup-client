@@ -33,12 +33,24 @@ const Feed = (props) => {
     const data = await res.json();
     console.log(data);
 
-    setIsLoading(false);
-
-    setEventsData([data.event, ...eventsData]);
+    // ORIGINAL
+    // setEventsData([...eventsData, data.event]);
+    // SECOND ITERATION
+    // const newEventsArray = [...eventsData].unshift(data.event)
+    // setEventsData(newEventsArray);
+    // THIRD ITERATION
+    // setEventsData((eventsData) => {
+    //   return [...eventsData].unshift(data.event);
+    // })
+    // FOURTH ITERATION
+    setEventsData((eventsData) => {
+      return [...eventsData, data.event];
+    })
     setSelectedEvent(data.event);
     setInput(initialFormVals);
     setShowEventForm(false);
+
+    setIsLoading(false);
   }
 
   const handleShowForm = () => {
@@ -61,6 +73,7 @@ const Feed = (props) => {
   const eventList = eventsData.map(event => {
     return (
       <Event
+        key={event._id}
         event={event}
         handleEventClick={handleEventClick}
         token={token}
@@ -96,13 +109,16 @@ const Feed = (props) => {
             <h2 className='form-header'>New Game</h2>
             
             <label for='title' className={input.title || 'placeholder-hidden'}>title (required)</label>
-            <input type='text' name='title' placeholder='title' value={input.title} onChange={handleInputChange} className='title' />
+            <input autoFocus type='text' name='title' placeholder='title' value={input.title} onChange={handleInputChange} className='title' />
           
             <label for='details' className={input.details || 'placeholder-hidden'}>details</label>
             <input type='text' name='details' placeholder='details' value={input.details} onChange={handleInputChange} className='details' />
           
             <label for='eventDate' className={input.eventDate || 'placeholder-hidden'}>game date</label>
-            <input type='text' name='eventDate' placeholder='game date' value={input.eventDate} onChange={handleInputChange} className='eventDate' />
+            <input type='date' min='2020-01-01' name='eventDate' placeholder='game date' value={input.eventDate} onChange={handleInputChange} className='eventDate' />
+          
+            {/* <label for='eventTime' className={input.eventTime || 'placeholder-hidden'}>game time</label>
+            <input type='time' min='2020-01-01' name='eventTime' placeholder='game time' value={input.eventTime} onChange={handleInputChange} className='eventTime' /> */}
           
             <label for='location' className={input.location || 'placeholder-hidden'}>location</label>
             <input type='text' name='location' placeholder='location' value={input.location} onChange={handleInputChange} className='location' />

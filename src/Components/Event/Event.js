@@ -77,7 +77,7 @@ const Event = (props) => {
   });
 
   return (
-    <div key={eventData._id} className='event-card' onClick={() => props.handleEventClick(props.event)}>
+    <div className='event-card' onClick={() => props.handleEventClick(props.event)}>
       <img className='avatar' src={eventData.creatorAvatar} alt='creator-avatar'/>
       <div className='event-card-info'>
         <h2 className='title'>{eventData.title}</h2>

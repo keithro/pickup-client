@@ -1,8 +1,9 @@
 # Todo
-- FIND A WAY TO UPDATE A STATE FOR EVENT LIST AFTER SUBMITTING A NEW EVENT
+- Add env variables for url
+- FIND A WAY TO MAKE SURE STATE IS UPDATED AFTER ADDING NEW EVENT
+- Change heights to min-height and remove 'overflow: hidden'
 - Move new event form to own component
 - Add delete confirmation modal
-- Change heights to min-height and remove 'overflow: hidden'
 - Comment dates use [Moment.js](https://momentjs.com/))
 - Change urls to production database
 - Profile page

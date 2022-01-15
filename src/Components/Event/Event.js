@@ -23,16 +23,13 @@ const Event = (props) => {
   }, [eventData]);
 
 
-  // TODO: Move handlers up to HomeContent and pass down as props
-
   const handleLike = async (event) => {
     const res = await fetch(`${API_ENDPOINT}/events/like/${eventData._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
         'x-auth-token': authContext.token
-      },
-      // body: JSON.stringify(input),
+      }
     });
     const data = await res.json();
 
@@ -46,8 +43,7 @@ const Event = (props) => {
       headers: {
         'Content-Type': 'application/json',
         'x-auth-token': authContext.token
-      },
-      // body: JSON.stringify(input),
+      }
     });
     const data = await res.json();
 
@@ -61,8 +57,7 @@ const Event = (props) => {
       headers: {
         'Content-Type': 'application/json',
         'x-auth-token': authContext.token
-      },
-      // body: JSON.stringify(input),
+      }
     });
     const data = await res.json();
     console.log(data);
@@ -86,7 +81,6 @@ const Event = (props) => {
         <h2 className='title'>{eventData.title}</h2>
         <p><span className='name'>{eventData.creatorName}</span> - <span className='date'>{eventData.eventDate}</span></p>
         <p><span className='sport'>{eventData.sport}</span> at <span className='location'>{eventData.location}</span></p>
-        {/* <p>{eventData.details}</p> */}
         
         <div className='feedback-tray'>
           <div className='feedback-container'>

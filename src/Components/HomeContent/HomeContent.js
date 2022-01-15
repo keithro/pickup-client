@@ -98,7 +98,6 @@ const HomeContent = (props) => {
         <Feed
           currentUser={currentUser}
           isLoading={isLoading}
-          // setIsLoading={setIsLoading}
           eventsData={eventsData}
           setEventsData={setEventsData}
           handleEventClick={handleEventClick}

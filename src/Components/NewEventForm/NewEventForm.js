@@ -58,9 +58,10 @@ const NewEventForm = (props) => {
     <>
       <div className={modalBGClasses} onClick={handleCancel}></div>
       <div className={modalFormClasses}>
+        <div className='event-form-heading'>
+          <h2 className='event-form-header'>New Game</h2>
+        </div>
         <form className='event-form' onSubmit={handleSubmitEvent}>
-          <h2 className='form-header'>New Game</h2>
-          
           <label for='title' className={input.title || 'placeholder-hidden'}>title (required)</label>
           <input autoFocus type='text' name='title' placeholder='title' value={input.title} onChange={handleInputChange} className='title' />
         

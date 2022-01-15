@@ -1,6 +1,7 @@
 # Todo
 - Style login/register form
 - Style new event form
+- About page with link to portfolio
 - Add delete confirmation modal
 - Profile edit page
 - FIND A WAY TO MAKE SURE STATE IS UPDATED AFTER ADDING NEW EVENT

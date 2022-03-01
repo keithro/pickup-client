@@ -53,6 +53,7 @@ const Feed = (props) => {
         setShowEventForm={setShowEventForm}
         eventsData={eventsData}
         setEventsData={setEventsData}
+        setSelectedEvent={setSelectedEvent}
       />
       <div className="event-list">
         {isLoading ? <div>loading...</div> : <>{eventList}</>}

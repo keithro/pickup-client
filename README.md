@@ -2,8 +2,11 @@
 
 ## Project Links
 
+### Front End
 - [Pick-up App](http://www.keithrodriguez.me/pickup-client/)
 - [client github repo](https://github.com/keithro/trivia-game)
+
+### Back End API
 - [Pick-up API](https://pick-up-api.herokuapp.com)
 - [api github repo](https://github.com/keithro/trivia-game)
 

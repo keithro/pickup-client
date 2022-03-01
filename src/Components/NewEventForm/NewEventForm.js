@@ -44,11 +44,10 @@ const NewEventForm = (props) => {
     props.setEventsData(() => {
       return [...props.eventsData, data.event];
     })
-    // setSelectedEvent(data.event);
+    props.setSelectedEvent(data.event)
     setInput(initialFormVals);
     setDisableSubmit(false);
     props.setShowEventForm(false);
-
   }
 
   const modalBGClasses = ['event-form-modal-bg', props.showEventForm ? 'modal-open' : 'modal-closed'].join(' ');

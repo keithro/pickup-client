@@ -83,7 +83,7 @@ const Welcome = (props) => {
             </>}
 
             <label for='email' className={input.email || 'placeholder-hidden'}>email</label>
-            <input type='text' name='email' placeholder='email' value={input.email} onChange={handleInputChange} className={emailInputClass} />
+            <input type='email' name='email' placeholder='email' value={input.email} onChange={handleInputChange} className={emailInputClass} />
 
             <label for='password' className={input.password || 'placeholder-hidden'}>password (min 8 characters)</label>
             <input type='password' name='password' placeholder='password' value={input.password} onChange={handleInputChange} className={pwInputClass} />

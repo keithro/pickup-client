@@ -65,6 +65,8 @@
   box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.3);
   position: relative;
   background-color: rgb(255, 255, 255);
+  border-radius: .6rem;
+  color: #1b4332;
   
   display: flex;
   flex-direction: column;
@@ -94,7 +96,12 @@
 }
 
 .access-form input {
-  height: 2.8rem;
+  height: 3.6rem;
+  padding: .6rem;
+  outline: none;
+  border: #cccccc 1px solid;
+  border-radius: .3rem;
+  /* appearance: none; */
 }
 
 /* TODO: Reconsider this */
@@ -103,8 +110,27 @@
 }
 
 .access-form button {
-  height: 2.8rem;
+  height: 3.6rem;
   margin-top: 1.2rem;
+  border: #cccccc 1px solid;
+  transition: all 300ms;
+}
+
+.access-form .submit-btn {
+  background-color: var(--green-light);
+}
+
+.access-form .submit-btn:hover {
+  color: #fff;
+  background-color: var(--green-medium);
+}
+
+.access-form .member-btn {
+  background-color: var(--gray-light);
+}
+
+.access-form .member-btn:hover {
+  background-color: var(--gray-medium);
 }
 
 .access-form button:disabled {

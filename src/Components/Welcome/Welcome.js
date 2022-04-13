@@ -93,8 +93,8 @@ const Welcome = (props) => {
               <input type='password' name='passwordCheck' placeholder='confirm password' value={input.passwordCheck} onChange={handleInputChange} className={pwInputClass} />
             </>}
 
-            <button type='submit' disabled={isLoading}>{isMember ? 'Sign In' : 'Create an Account'}</button>
-            <button type='button' onClick={handleMemberStatusChange}>{isMember ? "Don't have an account" : 'Already have an account'}</button>
+            <button type='submit' className='submit-btn' disabled={isLoading}>{isMember ? 'Sign In' : 'Create an Account'}</button>
+            <button type='button' className='member-btn' onClick={handleMemberStatusChange}>{isMember ? "Don't have an account" : 'Already have an account'}</button>
           </form>
         </div>
       </section>

@@ -62,25 +62,25 @@ const NewEventForm = (props) => {
         </div>
         <form className='event-form' onSubmit={handleSubmitEvent}>
           <label for='title' className={input.title || 'placeholder-hidden'}>title (required)</label>
-          <input autoFocus type='text' name='title' placeholder='title' value={input.title} onChange={handleInputChange} className='title' />
+          <input autoFocus type='text' name='title' placeholder='title' value={input.title} onChange={handleInputChange} className='input' />
         
           <label for='details' className={input.details || 'placeholder-hidden'}>details</label>
-          <input type='text' name='details' placeholder='details' value={input.details} onChange={handleInputChange} className='details' />
+          <input type='text' name='details' placeholder='details' value={input.details} onChange={handleInputChange} className='input' />
         
           <label for='eventDate' className={input.eventDate || 'placeholder-hidden'}>game date</label>
-          <input type='date' min='2020-01-01' name='eventDate' placeholder='game date' value={input.eventDate} onChange={handleInputChange} className='eventDate' />
+          <input type='date' min='2020-01-01' name='eventDate' placeholder='game date' value={input.eventDate} onChange={handleInputChange} className='input' />
         
           {/* <label for='eventTime' className={input.eventTime || 'placeholder-hidden'}>game time</label>
-          <input type='time' min='2020-01-01' name='eventTime' placeholder='game time' value={input.eventTime} onChange={handleInputChange} className='eventTime' /> */}
+          <input type='time' min='2020-01-01' name='eventTime' placeholder='game time' value={input.eventTime} onChange={handleInputChange} className='input' /> */}
         
           <label for='location' className={input.location || 'placeholder-hidden'}>location</label>
-          <input type='text' name='location' placeholder='location' value={input.location} onChange={handleInputChange} className='location' />
+          <input type='text' name='location' placeholder='location' value={input.location} onChange={handleInputChange} className='input' />
           
           <label for='sport' className={input.sport || 'placeholder-hidden'}>sport (required)</label>
-          <input type='text' name='sport' placeholder='sport' value={input.sport} onChange={handleInputChange} className='sport' />
+          <input type='text' name='sport' placeholder='sport' value={input.sport} onChange={handleInputChange} className='input' />
           
           <label for='skillLevel' className={input.skillLevel || 'placeholder-hidden'}>skill level</label>
-          <select name='skillLevel' id='skillLevel' value={input.skillLevel} onChange={handleInputChange} className='skillLevel' >
+          <select name='skillLevel' id='skillLevel' value={input.skillLevel} onChange={handleInputChange} className='input' >
             <option value='Any'>Any</option>
             <option value='Beginner'>Beginner</option>
             <option value='Intermediate'>Intermediate</option>
@@ -88,8 +88,8 @@ const NewEventForm = (props) => {
           </select>
 
           <div className='button-container'>
-            <button type='submit' disabled={disableSubmit}>Submit</button>
-            <button className='form-toggle-btn' type='button' onClick={handleCancel}>Cancel</button>
+            <button type='submit' className='submit-btn' disabled={disableSubmit}>Submit</button>
+            <button className='cancel-btn' type='button' onClick={handleCancel}>Cancel</button>
           </div>
         </form>
       </div>

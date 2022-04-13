@@ -85,10 +85,39 @@
   gap: 1.2rem;
 }
 
+.event-form .input {
+  height: 3.6rem;
+  padding: .6rem;
+  outline: none;
+  border: #cccccc 1px solid;
+  border-radius: .3rem;
+
+}
+
 .event-form button {
-  height: 2.8rem;
+  height: 3.6rem;
   margin-top: 1.2rem;
   flex: 1 1 50%;
+  border: none;
+  border-radius: .6rem;
+}
+
+.event-form .submit-btn {
+  background-color: var(--green-light);
+}
+
+.event-form .submit-btn:hover {
+  color: #fff;
+  background-color: var(--green-medium);
+}
+
+.event-form .cancel-btn {
+  background-color: var(--red-light);
+}
+
+.event-form .cancel-btn:hover {
+  color: #fff;
+  background-color: var(--red-medium);
 }
 
 .event-form button:disabled {

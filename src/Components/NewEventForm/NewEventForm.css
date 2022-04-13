@@ -99,11 +99,12 @@
   margin-top: 1.2rem;
   flex: 1 1 50%;
   border: none;
-  border-radius: .6rem;
+  border-radius: .3rem;
 }
 
 .event-form .submit-btn {
   background-color: var(--green-light);
+  border: none;
 }
 
 .event-form .submit-btn:hover {

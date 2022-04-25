@@ -33,7 +33,6 @@ const Event = (props) => {
     });
     const data = await res.json();
 
-    // console.log('EVENT DATA', data.event);
     setEventData(data.event);
   }
 
@@ -47,7 +46,6 @@ const Event = (props) => {
     });
     const data = await res.json();
 
-    // console.log('EVENT DATA', data.event);
     setEventData(data.event);
   }
 
@@ -60,7 +58,7 @@ const Event = (props) => {
       }
     });
     const data = await res.json();
-    console.log(data);
+    
     props.updateEvents();
   }
 

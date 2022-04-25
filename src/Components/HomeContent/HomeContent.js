@@ -101,6 +101,7 @@ const HomeContent = (props) => {
           eventsData={eventsData}
           setEventsData={setEventsData}
           handleEventClick={handleEventClick}
+          updateEvents={makeApiCall}
         />
         <EventInfo
           isLoading={isLoading}

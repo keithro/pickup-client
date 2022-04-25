@@ -9,7 +9,7 @@ const Feed = (props) => {
   // console.log('Your Feed props: ', props);
 
   const [showEventForm, setShowEventForm] = useState(false);
-  const {isLoading, eventsData, setEventsData, setSelectedEvent, handleEventClick, currentUser} = props;
+  const {isLoading, eventsData, setEventsData, setSelectedEvent, handleEventClick, currentUser, updateEvents} = props;
 
   const handleShowForm = () => {
     setShowEventForm(true);
@@ -22,6 +22,7 @@ const Feed = (props) => {
         event={event}
         handleEventClick={handleEventClick}
         currentUser={currentUser}
+        updateEvents={updateEvents}
       />
     );
   });
@@ -54,6 +55,7 @@ const Feed = (props) => {
         eventsData={eventsData}
         setEventsData={setEventsData}
         setSelectedEvent={setSelectedEvent}
+        updateEvents={updateEvents}
       />
       <div className="event-list">
         {isLoading ? <div>loading...</div> : <>{eventList}</>}

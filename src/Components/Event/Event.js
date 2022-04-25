@@ -61,6 +61,7 @@ const Event = (props) => {
     });
     const data = await res.json();
     console.log(data);
+    props.updateEvents();
   }
 
   const attendeeList = eventData.going.map(attendee => {

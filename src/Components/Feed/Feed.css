@@ -68,8 +68,8 @@
   font-weight: 700;
 }
 
-/* .event-list { */
+.event-list {
   /* min-height: calc(100% - 8rem); */
   /* height: 100%; */
-  /* overflow: scroll; */
-/* } */
+  overflow-y: auto;
+}

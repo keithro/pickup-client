@@ -112,18 +112,19 @@
 .access-form button {
   height: 3.6rem;
   margin-top: 1.2rem;
-  border: #cccccc 1px solid;
+  /* border: #cccccc 1px solid; */
+  border: none;
   border-radius: .3rem;
   transition: all 300ms;
 }
 
 .access-form .submit-btn {
-  background-color: var(--green-light);
+  color: #fff;
+  background-color: var(--green-medium);
 }
 
 .access-form .submit-btn:hover {
-  color: #fff;
-  background-color: var(--green-medium);
+  background-color: var(--green-dark);
 }
 
 .access-form .member-btn {

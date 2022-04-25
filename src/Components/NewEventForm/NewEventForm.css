@@ -28,7 +28,7 @@
   color: #1b4332;
   background-color: #fff;
 
-  transition: all 300ms ease-out;
+  transition: all 500ms ease-out;
 }
 
 .event-form-container.modal-open {
@@ -37,7 +37,7 @@
 
 .event-form-container.modal-closed {
   opacity: 0;
-  top: 150%;
+  top: -50%;
 }
 
 .event-form-heading {
@@ -103,13 +103,12 @@
 }
 
 .event-form .submit-btn {
-  background-color: var(--green-light);
-  border: none;
+  color: #fff;
+  background-color: var(--green-medium);
 }
 
 .event-form .submit-btn:hover {
-  color: #fff;
-  background-color: var(--green-medium);
+  background-color: var(--green-dark);
 }
 
 .event-form .cancel-btn {
